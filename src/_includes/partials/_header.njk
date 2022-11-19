@@ -1,6 +1,12 @@
-<header>
-  <nav class="flex gap-4 my-class">
+<header class="container flex items-center justify-between py-5">
+  <nav>
     <a href="/">Home</a>
     <a href="/about">About me</a>
   </nav>
+
+  <div class="rounded border flex items-center">
+    <button class="px-4 aria-pressed:bg-dark-primary-700" data-id="theme-switcher" value="light">Light</button>
+    <button class="px-4 aria-pressed:bg-dark-primary-700" data-id="theme-switcher" value="auto">Auto</button>
+    <button class="px-4 aria-pressed:bg-dark-primary-700" data-id="theme-switcher" value="dark">Dark</button>
+  </div>
 </header>
