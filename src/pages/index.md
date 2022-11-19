@@ -1,5 +1,6 @@
 ---
-title: Roman Zherdev
-layout: "base.njk"
+layout: 'base.njk'
+permalink: /
 ---
+
 Roman Zherdev
