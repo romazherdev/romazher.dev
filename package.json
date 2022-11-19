@@ -5,11 +5,11 @@
     "main": "index.js",
     "scripts": {
         "start": "npm-run-all -p dev:*",
-        "build": "run-s build:*",
+        "build": "cross-env NODE_ENV=production run-s build:*",
         "dev:11ty": "eleventy --serve",
         "dev:css": "tailwindcss -i src/styles/style.css -o public/styles/style.css --watch --postcss",
         "build:11ty": "eleventy",
-        "build:css": "tailwindcss -i src/styles/style.css -o _site/styles/style.css --postcss"
+        "build:css": "tailwindcss -i src/styles/style.css -o public/styles/style.css --postcss"
     },
     "keywords": [],
     "author": "",
@@ -17,6 +17,8 @@
     "devDependencies": {
         "@11ty/eleventy": "^1.0.2",
         "autoprefixer": "^10.4.13",
+        "cross-env": "^7.0.3",
+        "cssnano": "^5.1.14",
         "npm-run-all": "^4.1.5",
         "postcss": "^8.4.19",
         "prettier": "2.7.1",
