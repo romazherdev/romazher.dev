@@ -2,6 +2,11 @@
 module.exports = {
     content: ['./src/**/*.{njk,md}', './src/**/*.svg'],
     theme: {
+        screens: {
+            'sm': '768px',
+            'md': '1024px',
+            'lg': '1440px',
+        },
         colors: {
             'primary': '#BB52ED',
             'primary-lighter': '#D0ABDE',
