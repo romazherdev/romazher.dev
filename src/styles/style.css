@@ -3,5 +3,6 @@
 @import 'tailwindcss/components';
 @import './components/theme.css';
 @import './components/nav-link.css';
+@import './components/theme-switcher.css';
 
 @import 'tailwindcss/utilities';
