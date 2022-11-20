@@ -1,12 +1,25 @@
 <header class="container flex items-center justify-between py-5">
   <nav>
-    <a href="/">Home</a>
-    <a href="/about">About me</a>
+    <ul class="flex items-center gap-8">
+      {% for item in nav %}
+        {% if item.link == page.url %}
+          {% set current = 'aria-current="page"' %}
+        {% else %}
+          {% set current = '' %}
+        {% endif %}
+        <li>
+          <a class="nav-link" href="{{ item.link }}" {{ current | safe }}>
+            {{- item.title -}}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+
   </nav>
 
   <div class="rounded border flex items-center">
-    <button class="px-4 aria-pressed:bg-dark-primary-700" data-id="theme-switcher" value="light">Light</button>
-    <button class="px-4 aria-pressed:bg-dark-primary-700" data-id="theme-switcher" value="auto">Auto</button>
-    <button class="px-4 aria-pressed:bg-dark-primary-700" data-id="theme-switcher" value="dark">Dark</button>
+    <button class="px-4 aria-pressed:bg-primary-700" data-id="theme-switcher" value="light">Light</button>
+    <button class="px-4 aria-pressed:bg-primary-700" data-id="theme-switcher" value="auto">Auto</button>
+    <button class="px-4 aria-pressed:bg-primary-700" data-id="theme-switcher" value="dark">Dark</button>
   </div>
 </header>

@@ -1,0 +1,5 @@
+@layer components {
+    .theme {
+        @apply bg-background text-font-primary dark:bg-dark-background dark:text-dark-font-primary;
+    }
+}

@@ -18,11 +18,17 @@ module.exports = {
             lg: '1440px',
         },
         colors: {
+            transparent: 'transparent',
+            primary: {
+                400: '#D0ABDE',
+                700: '#BB52ED',
+            },
+            accent: '#1772C6',
+            background: '#EBEDF3',
+            decorative: '#D8AFF1',
+            'font-primary': '#140E25',
+            'font-secondary': '#3C3945',
             dark: {
-                primary: {
-                    400: '#D0ABDE',
-                    700: '#BB52ED',
-                },
                 accent: '#5FBAB0',
                 background: '#140E25',
                 decorative: '#351B4D',
