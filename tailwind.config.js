@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ['./src/**/*.{njk,md}', './src/**/*.svg'],
+    content: ['./src/**/*.{njk,md}'],
     darkMode: 'class',
     theme: {
         container: {
@@ -26,8 +26,8 @@ module.exports = {
                 accent: '#5FBAB0',
                 background: '#140E25',
                 decorative: '#351B4D',
-                'text-primary': '#F0F0F0',
-                'text-secondary': '#B3B3B3',
+                'font-primary': '#F0F0F0',
+                'font-secondary': '#B3B3B3',
             },
         },
         fontFamily: {

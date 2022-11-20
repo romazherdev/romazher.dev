@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .theme {
+    @apply dark:bg-dark-background dark:text-dark-font-primary;
+  }
+}

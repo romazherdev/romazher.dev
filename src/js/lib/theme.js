@@ -1,48 +1,50 @@
-const localStorageKey = 'theme';
+const themeKey = 'theme';
 const switcherSelector = '[data-id="theme-switcher"]';
 const switchers = document.querySelectorAll(switcherSelector) || [];
-const body = document.body;
+const darkPreferenceMedia = window.matchMedia('(prefers-color-scheme: dark)');
 
-let currentTheme =
-    localStorage.getItem(localStorageKey) ||
-    (window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? 'dark'
-        : 'light');
+init();
 
-setTheme(currentTheme);
-updateSwitchersState(switchers, currentTheme);
-listenThemeSwitches(switchers);
+function init() {
+    applyActiveTheme();
+    listenThemeChange();
+}
 
-function listenThemeSwitches(switchers) {
-    switchers.forEach((switcher) => {
-        switcher.addEventListener('click', (e) => {
-            const theme = e.target.value;
+function applyActiveTheme() {
+    const userPrefersDark = darkPreferenceMedia.matches;
+    const selectedTheme = localStorage.theme || 'auto';
 
-            if (theme === currentTheme) {
-                return;
-            }
+    if (
+        selectedTheme === 'dark' ||
+        (selectedTheme === 'auto' && userPrefersDark)
+    ) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+    }
 
-            updateSwitchersState(switchers, theme);
-            setTheme(theme);
-        });
+    switchers.forEach((s) => {
+        s.setAttribute('aria-pressed', s.value === selectedTheme);
     });
 }
 
-function setTheme(theme) {
-    if (currentTheme === 'dark') {
-        body.classList.remove(currentTheme);
-    }
-
-    if (theme === 'dark') {
-        body.classList.add(theme);
-    }
-
-    currentTheme = theme;
-    localStorage.setItem(localStorageKey, theme);
+function listenThemeChange() {
+    darkPreferenceMedia.addEventListener('change', () => {
+        if (!localStorage.theme) {
+            applyActiveTheme();
+        }
+    });
+    switchers.forEach((s) => {
+        s.addEventListener('click', (e) => switchTheme(e.target.value));
+    });
 }
 
-function updateSwitchersState(switchers, theme) {
-    switchers.forEach((switcher) => {
-        switcher.setAttribute('aria-pressed', switcher.value === theme);
-    });
+function switchTheme(theme) {
+    if (theme === 'auto') {
+        localStorage.removeItem('theme');
+    } else {
+        localStorage.setItem('theme', theme);
+    }
+
+    applyActiveTheme();
 }
