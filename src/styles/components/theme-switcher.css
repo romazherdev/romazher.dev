@@ -4,11 +4,11 @@
     }
 
     .theme-switcher-option {
-        @apply px-4 duration-200 aria-pressed:text-background aria-pressed:dark:text-dark-background rounded-full;
+        @apply rounded-full px-4 duration-200 aria-pressed:text-background aria-pressed:dark:text-dark-background;
     }
 
     .theme-switcher-option:not([aria-pressed='true']) {
-      @apply hover:bg-primary-700;
+        @apply hover:bg-primary-700;
     }
 
     .theme-switcher-option[aria-pressed='true']:nth-child(1)

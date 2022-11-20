@@ -1,26 +1,39 @@
-<header class="container flex items-center justify-between py-5">
-  <nav>
-    <ul class="flex items-center gap-8">
-      {% for item in nav %}
-        {% if item.link == page.url %}
-          {% set current = 'aria-current="page"' %}
-        {% else %}
-          {% set current = '' %}
-        {% endif %}
-        <li>
-          <a class="nav-link" href="{{ item.link }}" {{ current | safe }}>
-            {{- item.title -}}
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
+<header class="container py-5 sticky top-0">
+  <button id="menu-toggle" type="button" aria-label="Toggle menu" class="peer group sm:hidden inline-grid grid-cols-[auto_auto] gap-2" aria-expanded="false" aria-controls="menu">
+    <svg class="group-aria-[expanded=true]:hidden" width="24" height="24" aria-hidden="true">
+      <use href="/static/images/icons.svg#menu"/>
+    </svg>
+    <svg class="group-aria-[expanded=false]:hidden" width="24" height="24" aria-hidden="true">
+      <use href="/static/images/icons.svg#cross"/>
+    </svg>
+    <span class="group-aria-[expanded=true]:hidden">Menu</span>
+    <span class="group-aria-[expanded=false]:hidden">Close</span>
+  </button>
 
-  </nav>
+  <div class="max-sm:grid max-sm:grid-rows-[1fr_auto] max-sm:items-end max-sm:justify-center max-sm:fixed max-sm:inset-0 max-sm:pb-8 max-sm:dark:bg-dark-background max-sm:-z-10 max-sm:-translate-x-full max-sm:duration-200 sm:flex sm:justify-between sm:items-center peer-aria-[expanded=true]:translate-x-0">
+    <nav aria-label="Main" id="menu">
+      <ul class="max-sm:flex-col flex items-center gap-8 max-sm:pb-32">
+        {% for item in nav %}
+          {% if item.link == page.url %}
+            {% set current = 'aria-current="page"' %}
+          {% else %}
+            {% set current = '' %}
+          {% endif %}
+          <li>
+            <a class="nav-link" href="{{ item.link }}" {{ current | safe }}>
+              {{- item.title -}}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
 
-  <div class="theme-switcher">
-    <button class="theme-switcher-option" data-id="theme-switcher" value="light">Light</button>
-    <button class="theme-switcher-option" data-id="theme-switcher" value="auto">Auto</button>
-    <button class="theme-switcher-option" data-id="theme-switcher" value="dark">Dark</button>
-    <div class="theme-switcher-pill" aria-hidden="true"></div>
+    </nav>
+
+    <section class="theme-switcher" aria-label="Color theme switcher">
+      <button class="theme-switcher-option" data-id="theme-switcher" value="light">Light</button>
+      <button class="theme-switcher-option" data-id="theme-switcher" value="auto" title="As you have on your device">Auto</button>
+      <button class="theme-switcher-option" data-id="theme-switcher" value="dark">Dark</button>
+      <div class="theme-switcher-pill" aria-hidden="true"></div>
+    </section>
   </div>
 </header>

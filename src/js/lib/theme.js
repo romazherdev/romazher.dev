@@ -35,7 +35,7 @@ function listenThemeChange() {
         }
     });
     switchers.forEach((s) => {
-        s.addEventListener('click', (e) => switchTheme(e.target.value));
+        s.addEventListener('click', (e) => switchTheme(e.currentTarget.value));
     });
 }
 
