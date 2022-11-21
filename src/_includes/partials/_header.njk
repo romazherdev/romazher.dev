@@ -1,4 +1,4 @@
-<header class="container py-5 sticky top-0">
+<header class="container py-5 sticky top-0 max-sm:border-b border-decorative">
   <button id="menu-toggle" type="button" aria-label="Toggle menu" class="peer group sm:hidden inline-grid grid-cols-[auto_auto] gap-2" aria-expanded="false" aria-controls="menu">
     <svg class="group-aria-[expanded=true]:hidden" width="24" height="24" aria-hidden="true">
       <use href="/static/images/icons.svg#menu"/>
@@ -10,7 +10,7 @@
     <span class="group-aria-[expanded=false]:hidden">Close</span>
   </button>
 
-  <div class="max-sm:grid max-sm:grid-rows-[1fr_auto] max-sm:items-end max-sm:justify-center max-sm:fixed max-sm:inset-0 max-sm:pb-8 max-sm:dark:bg-dark-background max-sm:-z-10 max-sm:-translate-x-full max-sm:duration-200 sm:flex sm:justify-between sm:items-center peer-aria-[expanded=true]:translate-x-0">
+  <div class="max-sm:grid max-sm:grid-rows-[1fr_auto] max-sm:items-end max-sm:justify-center max-sm:fixed max-sm:inset-0 max-sm:pb-8 max-sm:bg-background max-sm:-z-10 max-sm:-translate-x-full max-sm:duration-200 sm:flex sm:justify-between sm:items-center peer-aria-[expanded=true]:translate-x-0 max-sm:shadow-2xl">
     <nav aria-label="Main" id="menu">
       <ul class="max-sm:flex-col flex items-center gap-8 max-sm:pb-32">
         {% for item in nav %}

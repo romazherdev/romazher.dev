@@ -4,11 +4,11 @@
     }
 
     .theme-switcher-option {
-        @apply rounded-full px-4 duration-200 aria-pressed:text-background aria-pressed:dark:text-dark-background;
+        @apply rounded-full px-4 duration-200 aria-pressed:text-background;
     }
 
     .theme-switcher-option:not([aria-pressed='true']) {
-        @apply hover:bg-primary-700;
+        @apply hover:bg-primary;
     }
 
     .theme-switcher-option[aria-pressed='true']:nth-child(1)
@@ -22,7 +22,7 @@
     }
 
     .theme-switcher-pill {
-        @apply pointer-events-none absolute inset-y-[2px] inset-x-2 -z-10 mx-auto rounded-full bg-font-primary duration-200 peer-aria-pressed:-translate-x-full dark:bg-dark-font-primary;
+        @apply pointer-events-none absolute inset-y-[2px] inset-x-2 -z-10 mx-auto rounded-full bg-font-primary duration-200 peer-aria-pressed:-translate-x-full;
         width: calc(33% - 1px);
     }
 }

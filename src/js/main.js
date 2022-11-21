@@ -1,2 +1,1 @@
-import './lib/theme.js';
-import './lib/menu.js';
+import './features/menu.js';

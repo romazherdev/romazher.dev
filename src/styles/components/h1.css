@@ -1,0 +1,6 @@
+@layer components {
+    .h1 {
+        @apply text-center font-bold uppercase;
+        font-size: clamp(2rem, 7vw, 8rem);
+    }
+}

@@ -1,8 +1,10 @@
 @import 'tailwindcss/base';
+@import './base/html.css';
 
 @import 'tailwindcss/components';
 @import './components/theme.css';
 @import './components/nav-link.css';
 @import './components/theme-switcher.css';
+@import './components/h1.css';
 
 @import 'tailwindcss/utilities';

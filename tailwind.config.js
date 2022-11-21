@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ['./src/**/*.{njk,md}'],
+    content: ['./src/**/*.{njk,md,html}'],
     darkMode: 'class',
     theme: {
         container: {
@@ -19,22 +19,26 @@ module.exports = {
         },
         colors: {
             transparent: 'transparent',
-            primary: {
-                400: '#D0ABDE',
-                700: '#BB52ED',
+            primary: 'var(--primary)',
+            secondary: 'var(--secondary)',
+            accent: 'var(--accent)',
+            background: 'var(--background)',
+            'font-primary': 'var(--font-primary)',
+            'font-secondary': 'var(--font-secondary)',
+            decorative: 'var(--decorative)',
+            pink: {
+                300: '#d0abde',
+                400: '#d8aff1',
+                700: '#bb52ed',
             },
-            accent: '#1772C6',
-            background: '#EBEDF3',
-            decorative: '#D8AFF1',
-            'font-primary': '#140E25',
-            'font-secondary': '#3C3945',
-            dark: {
-                accent: '#5FBAB0',
-                background: '#140E25',
-                decorative: '#351B4D',
-                'font-primary': '#F0F0F0',
-                'font-secondary': '#B3B3B3',
+            grey: {
+                400: '#b3b3b3',
+                900: '#3c3945',
             },
+            blue: '#1772c6',
+            white: '#ebedf3',
+            black: '#140e25',
+            green: '#5fbab0',
         },
         fontFamily: {
             sans: ['Inter', 'sans-serif'],
