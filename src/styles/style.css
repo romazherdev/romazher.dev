@@ -6,5 +6,6 @@
 @import './components/nav-link.css';
 @import './components/theme-switcher.css';
 @import './components/h1.css';
+@import './components/layout.css';
 
 @import 'tailwindcss/utilities';

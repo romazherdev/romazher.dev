@@ -1,33 +1,37 @@
-:root {
-    --pink-300: #d0abde;
-    --pink-400: #d8aff1;
-    --pink-700: #bb52ed;
-    --pink-900: #351b4d;
+@layer base {
+    :root {
+        --pink-300: #d0abde;
+        --pink-400: #d8aff1;
+        --pink-700: #bb52ed;
+        --pink-900: #351b4d;
 
-    --grey-400: #b3b3b3;
-    --grey-900: #3c3945;
+        --grey-400: #b3b3b3;
+        --grey-900: #3c3945;
 
-    --blue: #1772c6;
-    --white: #ebedf3;
-    --black: #140e25;
-    --green: #5fbab0;
+        --blue: #1772c6;
+        --white: #ebedf3;
+        --black: #140e25;
+        --green: #5fbab0;
 
-    --primary: var(--pink-700);
-    --secondary: var(--pink-300);
-}
+        --primary: var(--pink-700);
+        --secondary: var(--pink-300);
 
-:root.dark {
-    --accent: var(--green);
-    --background: var(--black);
-    --font-primary: var(--white);
-    --font-secondary: var(--grey-400);
-    --decorative: var(--pink-900);
-}
+        --shadow-base: 8px 8px 8px rgb(0 0 0 / 0.25);
+    }
 
-:root:not(.dark) {
-    --accent: var(--blue);
-    --background: var(--white);
-    --font-primary: var(--black);
-    --font-secondary: var(--grey-900);
-    --decorative: var(--pink-400);
+    :root.dark {
+        --accent: var(--green);
+        --background: var(--black);
+        --font-primary: var(--white);
+        --font-secondary: var(--grey-400);
+        --decorative: var(--pink-900);
+    }
+
+    :root:not(.dark) {
+        --accent: var(--blue);
+        --background: var(--white);
+        --font-primary: var(--black);
+        --font-secondary: var(--grey-900);
+        --decorative: var(--pink-400);
+    }
 }

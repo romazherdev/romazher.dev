@@ -3,19 +3,26 @@ module.exports = {
     content: ['./src/**/*.{njk,md,html}'],
     darkMode: 'class',
     theme: {
+        boxShadow: {
+            base: 'var(--shadow-base)',
+        },
         container: {
             center: true,
             padding: {
                 DEFAULT: '10px',
-                sm: '20px',
-                md: '52px',
-                lg: '150px',
+                xxs: '16px',
+                md: '20px',
+                lg: '52px',
+                xl: '150px',
             },
         },
         screens: {
-            sm: '768px',
-            md: '1024px',
-            lg: '1440px',
+            xxs: '375px',
+            xs: '480px',
+            sm: '600px',
+            md: '768px',
+            lg: '1024px',
+            xl: '1440px',
         },
         colors: {
             transparent: 'transparent',

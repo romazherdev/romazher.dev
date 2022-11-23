@@ -1,0 +1,16 @@
+<div class="relative pr-4 pb-4">
+  <div class="absolute left-4 top-4 right-0 bottom-0 bg-primary z-0 rounded-3xl shadow-base"></div>
+  <div class="bg-secondary rounded-3xl relative overflow-hidden pt-6 px-4 shadow-base grid items-end w-full">
+    <picture>
+      <source 
+        srcset="/static/images/portrait/lg.avif 400w,
+                /static/images/portrait/sm.avif"
+        sizes="(min-width: 480px) 400px, 295px" type="image/avif">
+      <source 
+        srcset="/static/images/portrait/lg.avif 400vw,
+                /static/images/portrait/sm.webp"
+        sizes="(min-width: 480px) 400vw, 295px" type="image/webp">
+      <img class="mx-auto -mb-[1px]" src="/static/images/portrait/lg.png" alt="Portrait photo">
+    </picture>
+  </div>
+</div>

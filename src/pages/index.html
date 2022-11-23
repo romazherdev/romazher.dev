@@ -4,8 +4,19 @@ permalink: /
 ---
 
 <div class="container">
-    <p class="-mb-2 mt-10 text-center text-font-secondary md:text-xl">
+    <p class="-mb-2 lg:-mb-4 xl:-mb-8 mt-10 ml-[12%] xs:ml-[18%] xl:ml-[14%] xxs:text-left text-font-secondary lg:text-xl">
         Hello, my name is
     </p>
     <h1 class="h1">Roman Zher<span class="text-primary">dev</span></h1>
+
+    <div class="layout items-center">
+        <div class="col-span-full md:col-end-7">
+            {% include "partials/_portrait.njk" %}
+        </div>
+        <div class="mt-8 col-span-full md:col-start-7 md:ml-6 xxs:text-lg xs:text-xl xl:text-">
+            <p>As you can see from my last name,</p>
+            <p>I was born a developer...</p>
+            <p class="text-[23px] font-bold uppercase text-primary xxs:text-[26px] xs:text-2xl lg:text-3xl xl:text-4xl mt-2">A frontend developer</p>
+        </div>
+    </div>
 </div>
