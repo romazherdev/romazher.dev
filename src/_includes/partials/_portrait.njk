@@ -2,15 +2,30 @@
   <div class="absolute left-4 top-4 right-0 bottom-0 bg-primary z-0 rounded-3xl shadow-base"></div>
   <div class="bg-secondary rounded-3xl relative overflow-hidden pt-6 px-4 shadow-base grid items-end w-full">
     <picture>
-      <source 
-        srcset="/static/images/portrait/lg.avif 400w,
-                /static/images/portrait/sm.avif"
-        sizes="(min-width: 480px) 400px, 295px" type="image/avif">
-      <source 
-        srcset="/static/images/portrait/lg.avif 400vw,
-                /static/images/portrait/sm.webp"
-        sizes="(min-width: 480px) 400vw, 295px" type="image/webp">
-      <img class="mx-auto -mb-[1px]" src="/static/images/portrait/lg.png" alt="Portrait photo">
+      <source
+        srcset="/static/images/portrait/photo@1x.avif 1x,
+                /static/images/portrait/photo@2x.avif 2x"
+        media="(max-width: 375px)"
+        type="image/avif">
+      <source
+        srcset="/static/images/portrait/photo-lg@1x.avif 1x,
+                /static/images/portrait/photo-lg@2x.avif 2x"
+        type="image/avif">
+      <source
+        srcset="/static/images/portrait/photo@1x.webp 1x,
+                /static/images/portrait/photo@2x.webp 2x"
+        media="(max-width: 375px)"
+        type="image/webp">
+      <source
+        srcset="/static/images/portrait/photo-lg@1x.webp 1x,
+                /static/images/portrait/photo-lg@2x.webp 2x"
+        type="image/webp">
+      <img 
+        src="/static/images/portrait/photo@1x.png"
+        srcset="/static/images/portrait/photo@2x.png 2x"
+        type="image/png"
+        alt="Portrait photo"
+        class="mx-auto -mb-[1px]">
     </picture>
   </div>
 </div>
