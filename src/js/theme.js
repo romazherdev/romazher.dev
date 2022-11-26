@@ -14,12 +14,19 @@ function applyActiveTheme() {
     const userPrefersDark = darkPreferenceMedia.matches;
     const selectedTheme = localStorage.theme || 'auto';
 
+    const themeColorMetaTag =
+        document.querySelector('meta[name="theme-color"]') ||
+        document.createElement('meta');
+    themeColorMetaTag.name = 'theme-color';
+
     if (
         selectedTheme === 'dark' ||
         (selectedTheme === 'auto' && userPrefersDark)
     ) {
         document.documentElement.classList.add('dark');
+        themeColorMetaTag.content = '#140e25';
     } else {
+        themeColorMetaTag.content = '#f5f5f5';
         document.documentElement.classList.remove('dark');
     }
 

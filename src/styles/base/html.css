@@ -9,8 +9,9 @@
         --grey-900: #3c3945;
 
         --blue: #1772c6;
-        --white: #ebedf3;
-        --black: #140e25;
+        --white: #f5f5f5;
+        --midnight: #140e25;
+        --black: #1c1c1c;
         --green: #5fbab0;
 
         --primary: var(--pink-700);
@@ -21,7 +22,7 @@
 
     :root.dark {
         --accent: var(--green);
-        --background: var(--black);
+        --background: var(--midnight);
         --font-primary: var(--white);
         --font-secondary: var(--grey-400);
         --decorative: var(--pink-900);
