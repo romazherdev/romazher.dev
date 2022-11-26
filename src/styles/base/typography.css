@@ -4,6 +4,10 @@
     }
 
     h2 {
-        @apply text-xl font-bold sm:text-2xl xl:text-4xl mb-[0.5em];
+        @apply mb-[0.5em] text-xl font-bold sm:text-2xl xl:text-4xl;
+    }
+
+    a {
+        @apply text-primary underline hover:text-accent;
     }
 }

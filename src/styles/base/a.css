@@ -1,5 +1,0 @@
-@layer base {
-    a {
-        @apply text-primary underline hover:text-accent;
-    }
-}

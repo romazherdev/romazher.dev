@@ -1,6 +1,11 @@
 const toggle = document.getElementById('menu-toggle');
 
 toggle?.addEventListener('click', (e) => {
-    const expanded = JSON.parse(e.currentTarget.getAttribute('aria-expanded'));
-    e.currentTarget.setAttribute('aria-expanded', !expanded);
+    const wasExpanded = JSON.parse(
+        e.currentTarget.getAttribute('aria-expanded')
+    );
+    const currentlyExpanded = !wasExpanded;
+
+    e.currentTarget.setAttribute('aria-expanded', currentlyExpanded);
+    document.body.classList.toggle('locked', currentlyExpanded);
 });

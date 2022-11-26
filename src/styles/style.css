@@ -1,7 +1,6 @@
 @import 'tailwindcss/base';
 @import './base/html.css';
 @import './base/typography.css';
-@import './base/a.css';
 
 @import 'tailwindcss/components';
 @import './components/theme.css';
@@ -9,5 +8,6 @@
 @import './components/theme-switcher.css';
 @import './components/h1.css';
 @import './components/layout.css';
+@import './components/locked.css';
 
 @import 'tailwindcss/utilities';
