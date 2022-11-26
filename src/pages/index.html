@@ -3,20 +3,34 @@ layout: 'base.njk'
 permalink: /
 ---
 
-<div class="container">
-    <p class="lg:-mb-2 ml-[12%] mt-10 xxs:text-left text-font-secondary lg:text-xl">
+<section class="container">
+    <p class="ml-[12%] mt-10 text-font-secondary xxs:text-left lg:-mb-2 lg:text-xl">
         Hello, my name is
     </p>
     <h1 class="h1 mb-4">Roman Zher<span class="text-primary">dev</span></h1>
 
     <div class="layout items-center">
-        <div class="col-span-full md:col-end-7">
+        <div class="col-span-full md:col-end-6">
             {% include "partials/_portrait.njk" %}
         </div>
-        <div class="mt-8 col-span-full md:col-start-7 md:ml-6 xxs:text-lg xs:text-xl xl:text-">
+        <div class="col-span-full mt-8 xxs:text-lg xs:text-xl md:col-start-6 md:ml-6 md:text-2xl">
             <p>As you can see from my last name,</p>
             <p>I was born a developer...</p>
-            <p class="text-[23px] font-bold uppercase text-primary xxs:text-[26px] xs:text-2xl lg:text-3xl xl:text-4xl mt-2">A frontend developer</p>
+            <p class="mt-2 text-[23px] font-bold uppercase text-primary xxs:text-[26px] xs:text-2xl md:text-3xl lg:text-5xl">
+                A frontend developer
+            </p>
         </div>
     </div>
-</div>
+</section>
+
+<div class="mt-16"></div>
+
+{%include "partials/_articles.njk" %}
+
+<div class="mt-16"></div>
+
+{%include "partials/_resources.njk" %}
+
+<div class="mt-16"></div>
+
+{%include "partials/_footer.njk" %}

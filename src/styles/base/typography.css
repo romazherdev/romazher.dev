@@ -1,0 +1,9 @@
+@layer base {
+    body {
+        @apply xl:text-xl;
+    }
+
+    h2 {
+        @apply text-xl font-bold sm:text-2xl xl:text-4xl mb-[0.5em];
+    }
+}
