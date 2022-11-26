@@ -9,5 +9,6 @@
 @import './components/h1.css';
 @import './components/layout.css';
 @import './components/locked.css';
+@import './components/menu.css';
 
 @import 'tailwindcss/utilities';

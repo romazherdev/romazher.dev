@@ -50,7 +50,11 @@ module.exports = {
         fontFamily: {
             sans: ['Inter', 'sans-serif'],
         },
-        extend: {},
+        extend: {
+            transitionDuration: {
+                0: '0ms',
+            }
+        },
     },
     plugins: [],
 };

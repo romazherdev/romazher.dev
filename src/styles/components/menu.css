@@ -1,0 +1,5 @@
+@layer components {
+  .menu-closed {
+    @apply max-md:!hidden;
+  }
+}
