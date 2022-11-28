@@ -1,0 +1,89 @@
+---
+import Portrait from "../components/Portrait.astro";
+import { Routing } from "../data/routing";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout pageUrl={Routing.Home.url}>
+  <section class="container">
+    <p class="ml-[12%] mt-10 xxs:text-left lg:-mb-2 lg:text-xl">
+      Hello, my name is
+    </p>
+    <h1 class="h1 mb-4">Roman Zher<span class="text-primary">dev</span></h1>
+
+    <div class="layout items-center">
+      <div class="col-span-full md:col-end-6">
+        <Portrait />
+      </div>
+      <div
+        class="col-span-full mt-8 xxs:text-lg xs:text-xl md:col-start-6 md:ml-6 md:text-2xl"
+      >
+        <p>As you can see from my last name,</p>
+        <p>I was born a developer</p>
+        <p
+          class="mt-2 text-[23px] font-bold uppercase text-primary xxs:text-[26px] xs:text-2xl md:text-3xl lg:text-5xl"
+        >
+          A frontend developer
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="mt-16"></div>
+
+  <section class="container">
+    <h2>Articles</h2>
+    <p>
+      Unfortunately, I have not made a single article just yet, but I wish to do
+      that soon. Meanwhile, you can read more <a href="/about">about&nbsp;me</a>
+      if you are interested.
+    </p>
+  </section>
+
+  <div class="mt-16"></div>
+
+  <section class="container">
+    <h2>Resources I recommend</h2>
+    <dl>
+      <dt>
+        <a
+          class="dark:text-primary dark:hover:text-accent"
+          href="https://doka.guide/">doka.guide</a
+        >
+      </dt>
+      <dd class="ml-4 md:ml-8">
+        the best learning platform in the Russian speaking community
+      </dd>
+      <dt class="mt-4">
+        <a
+          class="dark:text-primary dark:hover:text-accent"
+          href="https://web-standards.ru/">web-standards.ru</a
+        >
+      </dt>
+      <dd class="ml-4 md:ml-8">
+        cozy podcasts I listen to for staying up to date with the latest news in
+        the web
+      </dd>
+      <dt class="mt-4">
+        <a
+          class="dark:text-primary dark:hover:text-accent"
+          href="https://www.youtube.com/@pepelsbey">youtube.com/@pepelsbey</a
+        >
+      </dt>
+      <dd class="ml-4 md:ml-8">
+        a YouTube channel I really love, where the author shows how to build
+        high-quality and accessible web interfaces
+      </dd>
+      <dt class="mt-4">
+        <a
+          class="dark:text-primary dark:hover:text-accent"
+          href="https://www.codewars.com">codewars.com</a
+        >
+      </dt>
+      <dd class="ml-4 md:ml-8">
+        a well-known platform where you can improve your skills by solving
+        coding challenges
+      </dd>
+    </dl>
+  </section>
+</Layout>

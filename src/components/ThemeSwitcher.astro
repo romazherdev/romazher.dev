@@ -1,0 +1,72 @@
+---
+---
+
+<section class="theme-switcher" aria-label="Color theme switcher">
+  <button class="theme-switcher-option" data-id="theme-switcher" value="light"
+    >Light</button
+  >
+  <button
+    class="theme-switcher-option"
+    data-id="theme-switcher"
+    value="auto"
+    title="As you have on your device">Auto</button
+  >
+  <button class="theme-switcher-option" data-id="theme-switcher" value="dark"
+    >Dark</button
+  >
+  <div class="theme-switcher-pill" aria-hidden="true"></div>
+</section>
+
+<script>
+  const themeKey = "theme";
+  const switcherSelector = '[data-id="theme-switcher"]';
+  const switchers: NodeListOf<HTMLButtonElement> =
+    document.querySelectorAll(switcherSelector);
+  const darkPreferenceMedia = window.matchMedia("(prefers-color-scheme: dark)");
+
+  init();
+
+  function init() {
+    applyActiveTheme();
+    listenThemeChange();
+  }
+
+  function applyActiveTheme() {
+    const userPrefersDark = darkPreferenceMedia.matches;
+    const selectedTheme = localStorage.getItem(themeKey) || "auto";
+
+    if (
+      selectedTheme === "dark" ||
+      (selectedTheme === "auto" && userPrefersDark)
+    ) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+    switchers.forEach((s) => {
+      s.setAttribute("aria-pressed", String(s.value === selectedTheme));
+    });
+  }
+
+  function listenThemeChange() {
+    darkPreferenceMedia.addEventListener("change", () => {
+      if (!localStorage.getItem(themeKey)) {
+        applyActiveTheme();
+      }
+    });
+    switchers.forEach((s) => {
+      s.addEventListener("click", () => switchTheme(s.value));
+    });
+  }
+
+  function switchTheme(theme: string) {
+    if (theme === "auto") {
+      localStorage.removeItem("theme");
+    } else {
+      localStorage.setItem("theme", theme);
+    }
+
+    applyActiveTheme();
+  }
+</script>

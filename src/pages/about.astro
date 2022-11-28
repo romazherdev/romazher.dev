@@ -1,0 +1,52 @@
+---
+import Portrait from "../components/Portrait.astro";
+import Layout from "../layouts/Layout.astro";
+import { Routing } from "../data/routing";
+import Skills from "../components/Skills.astro";
+import Work from "../components/Work.astro";
+---
+
+<Layout title={Routing.About.title} pageUrl={Routing.About.url}>
+  <section class="container mt-16">
+    <h1 class="h1 mb-4 text-left">About me</h1>
+
+    <div class="layout items-center">
+      <div class="col-span-full md:col-end-6">
+        <Portrait />
+      </div>
+      <div
+        class="col-span-full mt-8 xxs:text-lg xs:text-xl md:col-start-6 md:ml-6 md:text-2xl"
+      >
+        <p>I’m Roman Zherdev, a frontend developer based in Prague</p>
+        <p class="mt-4">
+          I enjoy playing video games, table tennis and freaking out my wife
+          &#129315;
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="mt-24"></div>
+
+  <div class="container layout gap-y-10">
+    <Work className="col-span-full lg:col-span-8" />
+
+    <Skills className="col-span-full lg:col-start-10 lg:col-end-13" />
+  </div>
+
+  <div class="mt-24"></div>
+
+  <section class="container">
+    <h2>Summary</h2>
+    <p>I am a guy who develops beautiful and handy interfaces.</p>
+    <p>
+      My goal is to advocate best practices and convince stakeholders to use
+      them.
+    </p>
+    <p>
+      I enjoy challenging tasks that allow me to be creative and expand my skill
+      set and that of my colleagues.
+    </p>
+    <p>And the most important thing, I have got the cutest <a class="dark:text-primary" href="#">cat</a> :3</p>
+  </section>
+</Layout>

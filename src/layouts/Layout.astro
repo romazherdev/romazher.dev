@@ -1,0 +1,34 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import "../styles/style.css";
+
+export interface Props {
+  title?: string;
+	pageUrl: string;
+}
+
+const { title, pageUrl } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title ? `${title} - Roman Zherdev` : `Roman Zherdev`}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="theme">
+    <Header pageUrl={pageUrl} />
+    <slot />
+    <div class="mt-16"></div>
+    <Footer />
+  </body>
+</html>
