@@ -6,49 +6,12 @@ export interface Props {
 }
 
 const { className } = Astro.props;
-
-// Skills count to display in minimal view
-const count = 5;
-const primarySkills = SKILLS.slice(0, count);
-const hiddenSkills = SKILLS.slice(count, SKILLS.length);
 ---
 
 <section class={className}>
   <h2>Skills</h2>
 
-  <ul class="grid gap-4 md:max-lg:grid-cols-3">
-    {primarySkills.map((skillName) => <li>{skillName}</li>)}
-    {
-      hiddenSkills.map((skillName) => (
-        <li data-hidden class="max-md:hidden">
-          {skillName}
-        </li>
-      ))
-    }
-    <li class="md:hidden">
-      <button
-        id="see_more_skill"
-        class="underline hover:text-accent"
-        title="Expand list"
-        aria-expanded="false">See more</button
-      >
-    </li>
+  <ul class="grid gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-1">
+    {SKILLS.map((skillName) => <li>{skillName}</li>)}
   </ul>
 </section>
-
-<script>
-  const btn = document.getElementById("see_more_skill");
-  const hiddenItems = document.querySelectorAll("[data-hidden]");
-
-  btn?.addEventListener("click", () => {
-    const wasExpanded = JSON.parse(
-      btn.getAttribute("aria-expanded") || "false"
-    );
-    const nowExpanded = !wasExpanded;
-    btn.setAttribute("aria-expanded", String(nowExpanded));
-    btn.innerText = nowExpanded ? "See less" : "See more";
-    hiddenItems.forEach((item) => {
-      item.classList.toggle("max-md:hidden", wasExpanded);
-    });
-  });
-</script>

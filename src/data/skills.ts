@@ -1,5 +1,6 @@
 export const SKILLS = [
-  'JavaScript / TypeScript',
+  'JavaScript',
+  'TypeScript',
   'HTML & CSS',
   'Accessibility',
   'Angular',

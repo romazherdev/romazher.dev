@@ -26,7 +26,7 @@ import Work from "../components/Work.astro";
     </div>
   </section>
 
-  <div class="mt-24"></div>
+  <div class="mt-16 lg:mt-24"></div>
 
   <div class="container layout gap-y-10">
     <Work className="col-span-full lg:col-span-8" />
@@ -34,19 +34,24 @@ import Work from "../components/Work.astro";
     <Skills className="col-span-full lg:col-start-10 lg:col-end-13" />
   </div>
 
-  <div class="mt-24"></div>
+  <div class="mt-16"></div>
 
   <section class="container">
     <h2>Summary</h2>
-    <p>I am a guy who develops beautiful and handy interfaces.</p>
-    <p>
-      My goal is to advocate best practices and convince stakeholders to use
-      them.
-    </p>
-    <p>
-      I enjoy challenging tasks that allow me to be creative and expand my skill
-      set and that of my colleagues.
-    </p>
-    <p>And the most important thing, I have got the cutest <a class="dark:text-primary" href="#">cat</a> :3</p>
+    <ul class="grid gap-2 list-disc pl-5">
+      <li>I am a guy who develops beautiful and handy interfaces</li>
+      <li>
+        I chase best practices and modern technologies for joy and maximum
+        efficiency
+      </li>
+      <li>
+        I love challenging tasks that enable my creativity and expand my
+        skillset
+      </li>
+      <li>
+        And... I have got the cutest <a href="#">cat</a
+        >&nbsp;&#128049;
+      </li>
+    </ul>
   </section>
 </Layout>
