@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Picture } from "@astrojs/image/components";
 ---
 
 <div class="relative pr-4 pb-4">
@@ -10,13 +10,18 @@ import { Image } from "@astrojs/image/components";
   <div
     class="bg-secondary rounded-3xl relative overflow-hidden pt-6 px-4 shadow-base grid items-end w-full"
   >
-    <Image
+    <Picture
       class="mx-auto -mb-[1px]"
+      widths={[300, 450]}
+      sizes="(max-width: 1024px) 325px, 420px"
+      aspectRatio="4:3"
+      formats={['avif', 'webp', 'png']}
       src={import("../assets/Photo.png")}
       alt="Portrait photo"
-      format="webp"
       loading="eager"
       decoding="auto"
+      width="415"
+      height="311"
     />
   </div>
 </div>

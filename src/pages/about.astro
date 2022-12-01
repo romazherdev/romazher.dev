@@ -6,7 +6,7 @@ import Skills from "../components/Skills.astro";
 import Work from "../components/Work.astro";
 ---
 
-<Layout title={Routing.About.title} pageUrl={Routing.About.url}>
+<Layout title={Routing.About.title} pageUrl={Routing.About.url} description="Work experience, skills, other facts about me">
   <section class="container mt-16">
     <h1 class="h1 mb-4 text-left">About me</h1>
 
@@ -20,7 +20,7 @@ import Work from "../components/Work.astro";
         <p>I’m Roman Zherdev, a frontend developer based in Prague</p>
         <p class="mt-4">
           I enjoy playing video games, table tennis and freaking out my wife
-          &#129315;
+          <span aria-hidden="true">&#129315;</span>
         </p>
       </div>
     </div>
@@ -38,20 +38,16 @@ import Work from "../components/Work.astro";
 
   <section class="container">
     <h2>Summary</h2>
-    <ul class="grid gap-2 list-disc pl-5">
-      <li>I am a guy who develops beautiful and handy interfaces</li>
-      <li>
-        I chase best practices and modern technologies for joy and maximum
-        efficiency
-      </li>
-      <li>
-        I love challenging tasks that enable my creativity and expand my
-        skillset
-      </li>
-      <li>
-        And... I have got the cutest <a href="#">cat</a
-        >&nbsp;&#128049;
-      </li>
-    </ul>
+    <p class="mb-2">I am a guy who develops beautiful and handy interfaces</p>
+    <p class="mb-2">
+      I chase best practices and modern technologies for joy and maximum
+      efficiency
+    </p>
+    <p class="mb-2">
+      I love challenging tasks that enable my creativity and expand my skillset
+    </p>
+    <p>
+      And... I have got the cutest <a href="#">cat</a>&nbsp;<span aria-hidden="true">&#128049;</span>
+    </p>
   </section>
 </Layout>

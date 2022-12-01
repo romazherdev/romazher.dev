@@ -9,7 +9,7 @@ const { company, dateEnd, dateStart, location, title, projects, className } =
   Astro.props;
 ---
 
-<article class={className}>
+<div class={className}>
   <h3 class="text-primary font-bold text-base mb-2">
     {company}{location ? `- ${location}` : ""}
   </h3>
@@ -24,15 +24,16 @@ const { company, dateEnd, dateStart, location, title, projects, className } =
       projects.map(({ description, technologies }) => (
         <li>
           <p class="mb-2">{description}</p>
-          <div class="flex gap-[10px] flex-wrap">
+          <section class="flex gap-[10px] flex-wrap">
+            <h4 class="sr-only">Technologies:</h4>
             {technologies.map((label) => (
               <span class="text-xs lg:text-sm py-1 px-3 rounded-md border border-accent text-accent">
                 {label}
               </span>
             ))}
-          </div>
+          </section>
         </li>
       ))
     }
   </ul>
-</article>
+</div>

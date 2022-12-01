@@ -1,5 +1,5 @@
 @layer components {
     .h1 {
-        @apply text-center text-3xl font-bold uppercase xxs:text-4xl xs:text-5xl sm:text-6xl md:text-[82px] lg:text-[104px] xl:text-9xl;
+        @apply text-center text-[10vw] font-bold uppercase xxs:text-4xl xs:text-5xl sm:text-6xl md:text-[82px] lg:text-[104px] xl:text-9xl;
     }
 }
