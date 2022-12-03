@@ -1,24 +1,23 @@
 @layer components {
-    .theme-switcher-option {
-        @apply rounded-full px-4 duration-200 aria-pressed:text-background;
-    }
+  .theme-switcher-option {
+    @apply rounded-full px-4 duration-200 aria-pressed:text-background;
+  }
 
-    .theme-switcher-option:not([aria-pressed='true']) {
-        @apply hover:bg-primary hover:text-background;
-    }
+  .theme-switcher-option:not([aria-pressed='true']) {
+    @apply hover:bg-primary hover:text-background;
+  }
 
-    .theme-switcher-option[aria-pressed='true']:nth-child(1)
-        ~ .theme-switcher-pill {
-        @apply -translate-x-full rtl:translate-x-full;
-    }
+  .theme-switcher-option[aria-pressed='true']:nth-child(1)
+    ~ .theme-switcher-pill {
+    @apply -translate-x-full rtl:translate-x-full;
+  }
 
-    .theme-switcher-option[aria-pressed='true']:nth-child(3)
-        ~ .theme-switcher-pill {
-        @apply translate-x-full rtl:-translate-x-full;
-    }
+  .theme-switcher-option[aria-pressed='true']:nth-child(3)
+    ~ .theme-switcher-pill {
+    @apply translate-x-full rtl:-translate-x-full;
+  }
 
-    .theme-switcher-pill {
-        @apply pointer-events-none absolute inset-y-[2px] inset-x-2 -z-10 mx-auto rounded-full bg-font-primary duration-200 peer-aria-pressed:-translate-x-full;
-        width: calc(33% - 1px);
-    }
+  .theme-switcher-pill {
+    @apply pointer-events-none absolute inset-y-[2px] inset-x-2 -z-10 mx-auto rounded-full bg-font-primary duration-200 peer-aria-pressed:-translate-x-full will-change-transform w-[calc(33%-1px)];
+  }
 }

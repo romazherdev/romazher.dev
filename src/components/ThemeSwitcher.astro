@@ -5,71 +5,39 @@
   class="relative inline-grid grid-cols-3 rounded-full border-2 p-[2px]"
   aria-label="Color theme switcher"
 >
-  <button class="theme-switcher-option" data-id="theme-switcher" value="light"
+  <button class="theme-switcher-option" data-theme-switcher value="light"
     >Light</button
   >
   <button
     class="theme-switcher-option"
-    data-id="theme-switcher"
+    data-theme-switcher
     value="auto"
     title="As you have on your device">Auto</button
   >
-  <button class="theme-switcher-option" data-id="theme-switcher" value="dark"
+  <button class="theme-switcher-option" data-theme-switcher value="dark"
     >Dark</button
   >
   <div class="theme-switcher-pill" aria-hidden="true"></div>
 </section>
 
 <script>
-  const themeKey = "theme";
-  const switcherSelector = '[data-id="theme-switcher"]';
-  const switchers: NodeListOf<HTMLButtonElement> =
-    document.querySelectorAll(switcherSelector);
-  const darkPreferenceMedia = window.matchMedia("(prefers-color-scheme: dark)");
+  const switchers = document.querySelectorAll(
+    '[data-theme-switcher]'
+  ) as NodeListOf<HTMLButtonElement>;
 
-  init();
-
-  function init() {
-    applyActiveTheme();
-    listenThemeChange();
-  }
-
-  function applyActiveTheme() {
-    const userPrefersDark = darkPreferenceMedia.matches;
-    const selectedTheme = localStorage.getItem(themeKey) || "auto";
-
-    if (
-      selectedTheme === "dark" ||
-      (selectedTheme === "auto" && userPrefersDark)
-    ) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-
-    switchers.forEach((s) => {
-      s.setAttribute("aria-pressed", String(s.value === selectedTheme));
+  const reflectSwitchers = () => {
+    switchers.forEach((sw) => {
+      sw.setAttribute('aria-pressed', String(sw.value === window.theme.value));
     });
-  }
+  };
 
-  function listenThemeChange() {
-    darkPreferenceMedia.addEventListener("change", () => {
-      if (!localStorage.getItem(themeKey)) {
-        applyActiveTheme();
-      }
+  reflectSwitchers();
+
+  switchers.forEach((sw) => {
+    sw.addEventListener('click', () => {
+      window.theme.set((sw as HTMLButtonElement).value as ThemeValue);
     });
-    switchers.forEach((s) => {
-      s.addEventListener("click", () => switchTheme(s.value));
-    });
-  }
+  });
 
-  function switchTheme(theme: string) {
-    if (theme === "auto") {
-      localStorage.removeItem("theme");
-    } else {
-      localStorage.setItem("theme", theme);
-    }
-
-    applyActiveTheme();
-  }
+  window.addEventListener(window.theme.eventName, reflectSwitchers);
 </script>

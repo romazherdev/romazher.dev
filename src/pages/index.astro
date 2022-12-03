@@ -1,15 +1,22 @@
 ---
-import Portrait from "../components/Portrait.astro";
-import { Routing } from "../data/routing";
-import Layout from "../layouts/Layout.astro";
+import Portrait from '../components/Portrait.astro';
+import { Routing } from '../data/routing';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout pageUrl={Routing.Home.url} description="A frontend developer's blog, who is in love with web technologies">
+<Layout
+  pageUrl={Routing.Home.url}
+  description="A frontend developer's blog, who is in love with web technologies"
+>
   <section class="container">
     <p class="mis-[12%] mt-10 xxs:text-left lg:-mb-2 lg:text-xl">
       Hello, my name is
     </p>
-    <h1 class="h1 mb-4">Roman Zher<span class="text-primary">dev</span></h1>
+    <h1
+      class="text-center text-[10vw] font-bold uppercase xxs:text-4xl xs:text-5xl sm:text-6xl md:text-[82px] lg:text-[104px] xl:text-9xl mb-4"
+    >
+      Roman Zher<span class="text-primary">dev</span>
+    </h1>
 
     <div class="layout items-center">
       <div class="col-span-full md:col-end-6">
