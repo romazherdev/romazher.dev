@@ -2,22 +2,30 @@
 ---
 
 <section
-  class="relative inline-grid grid-cols-3 rounded-full border-2 p-[2px]"
+  class="relative inline-grid grid-cols-3 rounded-full border-2 p-[2px] group"
   aria-label="Color theme switcher"
 >
-  <button class="theme-switcher-option" data-theme-switcher value="light"
-    >Light</button
+  <button
+    class="rounded-full px-4 duration-200 aria-pressed:text-background [&:not([aria-pressed=true])]:hover:bg-primary [¬([aria-pressed=true]):hover:text-background peer/light"
+    data-theme-switcher
+    value="light">Light</button
   >
   <button
-    class="theme-switcher-option"
+    class="rounded-full px-4 duration-200 aria-pressed:text-background [&:not([aria-pressed=true])]:hover:bg-primary [¬([aria-pressed=true]):hover:text-background"
     data-theme-switcher
     value="auto"
     title="As you have on your device">Auto</button
   >
-  <button class="theme-switcher-option" data-theme-switcher value="dark"
-    >Dark</button
+  <button
+    class="rounded-full px-4 duration-200 aria-pressed:text-background [&:not([aria-pressed=true])]:hover:bg-primary [¬([aria-pressed=true]):hover:text-background peer/dark"
+    data-theme-switcher
+    value="dark">Dark</button
   >
-  <div class="theme-switcher-pill" aria-hidden="true"></div>
+  <div
+    class="pointer-events-none absolute inset-y-[2px] inset-x-2 -z-10 mx-auto rounded-full bg-font-primary duration-200 peer-aria-pressed:-translate-x-full will-change-transform w-[calc(33%-1px)] peer-aria-pressed/light:-translate-x-full peer-aria-pressed/dark:translate-x-full"
+    aria-hidden="true"
+  >
+  </div>
 </section>
 
 <script>

@@ -4,7 +4,6 @@
 @import './base/interactive.css';
 
 @import 'tailwindcss/components';
-@import './components/theme-switcher.css';
 @import './components/layout.css';
 @import './components/locked.css';
 @import './components/menu.css';
