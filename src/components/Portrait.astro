@@ -12,16 +12,16 @@ import { Picture } from "@astrojs/image/components";
   >
     <Picture
       class="mx-auto -mb-[1px]"
-      widths={[300, 450]}
-      sizes="(max-width: 1024px) 325px, 420px"
-      aspectRatio="4:3"
-      formats={['avif', 'webp', 'png']}
+      widths={[420, 840, 1260]}
+      sizes="(max-width: 479px) 295px, 420px"
+      aspectRatio="1.25"
+      formats={['avif', 'webp', 'jpg']}
       src={import("../assets/Photo.png")}
       alt="Portrait photo"
       loading="eager"
       decoding="auto"
       width="415"
-      height="311"
+      height="328"
     />
   </div>
 </div>
