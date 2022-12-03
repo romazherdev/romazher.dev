@@ -23,6 +23,20 @@ const { title, pageUrl, description } = Astro.props;
     <meta name="description" content={description} />
     <meta name="theme-color" content="Canvas" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="preload"
+      href="/fonts/Inter-Regular-subset.woff2"
+      crossorigin
+      as="font"
+      type="font/woff2"
+    />
+    <link
+      rel="preload"
+      href="/fonts/Inter-Bold-subset.woff2"
+      crossorigin
+      as="font"
+      type="font/woff2"
+    />
   </head>
   <body class="bg-background text-font-primary">
     <Header pageUrl={pageUrl} />
