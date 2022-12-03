@@ -15,5 +15,5 @@ export const SKILLS = [
   'AWS',
   'REST',
   'GraphQL',
-  'Docker'
+  'Docker',
 ];

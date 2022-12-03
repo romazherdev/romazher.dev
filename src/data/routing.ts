@@ -1,12 +1,12 @@
 export const Routing = {
   Home: {
-    url: "/",
-    label: "Home",
+    url: '/',
+    label: 'Home',
   },
   About: {
-    url: "/about",
-    label: "About",
-    title: "About",
+    url: '/about',
+    label: 'About',
+    title: 'About',
   },
 };
 

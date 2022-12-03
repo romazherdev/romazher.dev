@@ -1,5 +1,5 @@
 ---
-import type { WorkExpItem } from "../data/work-experience";
+import type { WorkExpItem } from '../data/work-experience';
 
 export interface Props extends WorkExpItem {
   className?: string;
@@ -11,7 +11,7 @@ const { company, dateEnd, dateStart, location, title, projects, className } =
 
 <div class={className}>
   <h3 class="text-primary font-bold text-base mb-2">
-    {company}{location ? `- ${location}` : ""}
+    {company}{location ? `- ${location}` : ''}
   </h3>
   <div class="text-font-secondary text-xs mb-2">
     <div>

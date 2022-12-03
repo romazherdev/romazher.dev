@@ -1,43 +1,43 @@
 @layer base {
-    :root {
-        --pink-300: hsl(284, 44%, 77%);
-        --pink-400: hsl(277, 70%, 82%);
-        --pink-700: hsl(281, 81%, 63%);
-        --pink-900: hsl(271, 48%, 20%);
+  :root {
+    --pink-300: hsl(284, 44%, 77%);
+    --pink-400: hsl(277, 70%, 82%);
+    --pink-700: hsl(281, 81%, 63%);
+    --pink-900: hsl(271, 48%, 20%);
 
-        --blue: hsl(209, 79%, 43%);
+    --blue: hsl(209, 79%, 43%);
 
-        --green-200: hsl(169, 50%, 75%);
-        --green-300: hsl(168, 80%, 48%);
-        --green-500: hsl(168, 83%, 40%);
+    --green-200: hsl(169, 50%, 75%);
+    --green-300: hsl(168, 80%, 48%);
+    --green-500: hsl(168, 83%, 40%);
 
-        --grey-400: hsl(0, 0%, 70%);
-        --grey-900: hsl(255, 10%, 25%);
+    --grey-400: hsl(0, 0%, 70%);
+    --grey-900: hsl(255, 10%, 25%);
 
-        --white: hsl(0, 0%, 96%);
-        --midnight: hsl(256, 45%, 10%);
-        --black: hsl(0, 0%, 11%);
+    --white: hsl(0, 0%, 96%);
+    --midnight: hsl(256, 45%, 10%);
+    --black: hsl(0, 0%, 11%);
 
-        --shadow-base: 8px 8px 8px rgb(0 0 0 / 0.25);
-    }
+    --shadow-base: 8px 8px 8px rgb(0 0 0 / 0.25);
+  }
 
-    :root.dark {
-        --primary: var(--pink-700);
-        --secondary: var(--pink-300);
-        --accent: var(--green-300);
-        --background: var(--midnight);
-        --font-primary: var(--white);
-        --font-secondary: var(--grey-400);
-        --decorative: var(--pink-900);
-    }
+  :root.dark {
+    --primary: var(--pink-700);
+    --secondary: var(--pink-300);
+    --accent: var(--green-300);
+    --background: var(--midnight);
+    --font-primary: var(--white);
+    --font-secondary: var(--grey-400);
+    --decorative: var(--pink-900);
+  }
 
-    :root:not(.dark) {
-        --primary: var(--green-500);
-        --secondary: var(--green-300);
-        --accent: var(--blue);
-        --background: var(--white);
-        --font-primary: var(--black);
-        --font-secondary: var(--grey-900);
-        --decorative: var(--green-200);
-    }
+  :root:not(.dark) {
+    --primary: var(--green-500);
+    --secondary: var(--green-300);
+    --accent: var(--blue);
+    --background: var(--white);
+    --font-primary: var(--black);
+    --font-secondary: var(--grey-900);
+    --decorative: var(--green-200);
+  }
 }

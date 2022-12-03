@@ -1,14 +1,22 @@
 ---
-import Portrait from "../components/Portrait.astro";
-import Layout from "../layouts/Layout.astro";
-import { Routing } from "../data/routing";
-import Skills from "../components/Skills.astro";
-import Work from "../components/Work.astro";
+import Portrait from '../components/Portrait.astro';
+import Layout from '../layouts/Layout.astro';
+import { Routing } from '../data/routing';
+import Skills from '../components/Skills.astro';
+import Work from '../components/Work.astro';
 ---
 
-<Layout title={Routing.About.title} pageUrl={Routing.About.url} description="Work experience, skills, other facts about me">
+<Layout
+  title={Routing.About.title}
+  pageUrl={Routing.About.url}
+  description="Work experience, skills, other facts about me"
+>
   <section class="container mt-16">
-    <h1 class="text-start text-[10vw] font-bold uppercase xxs:text-4xl xs:text-5xl sm:text-6xl md:text-[82px] lg:text-[104px] xl:text-9xl mb-4">About me</h1>
+    <h1
+      class="text-start text-[10vw] font-bold uppercase xxs:text-4xl xs:text-5xl sm:text-6xl md:text-[82px] lg:text-[104px] xl:text-9xl mb-4"
+    >
+      About me
+    </h1>
 
     <div class="layout items-center">
       <div class="col-span-full md:col-end-6">
@@ -47,7 +55,9 @@ import Work from "../components/Work.astro";
       I love challenging tasks that enable my creativity and expand my skillset
     </p>
     <p>
-      And... I have got the cutest <a href="#">cat</a>&nbsp;<span aria-hidden="true">&#128049;</span>
+      And... I have got the cutest <a href="#">cat</a>&nbsp;<span
+        aria-hidden="true">&#128049;</span
+      >
     </p>
   </section>
 </Layout>
