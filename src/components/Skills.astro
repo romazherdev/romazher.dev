@@ -11,7 +11,7 @@ const { className } = Astro.props;
 <section class={className}>
   <h2>Skills</h2>
 
-  <ul class="grid gap-2 lg:gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-1">
+  <ul class="grid gap-2 lg:gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-1 text-font-secondary">
     {SKILLS.map((skillName) => <li>{skillName}</li>)}
   </ul>
 </section>
