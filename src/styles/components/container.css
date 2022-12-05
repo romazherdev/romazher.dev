@@ -1,0 +1,5 @@
+@layer components {
+  .container {
+    @apply max-md:max-w-full;
+  }
+}

@@ -18,7 +18,7 @@ const { pageUrl } = Astro.props;
       id="menu-toggle"
       type="button"
       aria-label="Toggle menu"
-      class="peer group md:hidden inline-grid grid-cols-[auto_auto] gap-2"
+      class="peer group md:hidden inline-grid grid-cols-[auto_auto] gap-2 hover:text-primary"
       aria-expanded="false"
       aria-controls="menu"
     >
@@ -106,6 +106,6 @@ const { pageUrl } = Astro.props;
     menuAnimatedContainer.classList.toggle('menu-closed', wasExpanded);
     toggle.setAttribute('aria-expanded', String(currentlyExpanded));
     currentlyExpanded ? focusTrap.activate() : focusTrap.deactivate();
-    document.body.classList.toggle('locked', currentlyExpanded);
+    document.body.classList.toggle('menu-opened', currentlyExpanded);
   });
 </script>

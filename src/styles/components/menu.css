@@ -2,4 +2,8 @@
   .menu-closed {
     @apply max-md:!hidden;
   }
+
+  .menu-opened {
+    @apply max-md:overflow-hidden;
+  }
 }

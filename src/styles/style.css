@@ -4,9 +4,9 @@
 @import './base/interactive.css';
 
 @import 'tailwindcss/components';
-@import './components/layout.css';
-@import './components/locked.css';
+@import './components/container.css';
 @import './components/menu.css';
+@import './components/layout.css';
 
 @import 'tailwindcss/utilities';
 
