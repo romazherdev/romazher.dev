@@ -5,14 +5,14 @@
     --pink-700: hsl(281, 81%, 63%);
     --pink-900: hsl(271, 48%, 20%);
 
-    --blue: hsl(209, 79%, 43%);
-
-    --green-200: hsl(169, 50%, 75%);
     --green-300: hsl(168, 80%, 48%);
-    --green-500: hsl(168, 83%, 40%);
 
     --grey-400: hsl(0, 0%, 70%);
     --grey-900: hsl(255, 10%, 25%);
+
+    --blue-300: hsl(209, 79%, 60%);
+    --blue-500: hsl(209, 79%, 53%);
+    --blue-700: hsl(209, 79%, 43%);
 
     --white: hsl(0, 0%, 96%);
     --midnight: hsl(256, 45%, 10%);
@@ -32,12 +32,12 @@
   }
 
   :root:not(.dark) {
-    --primary: var(--green-500);
-    --secondary: var(--green-300);
-    --accent: var(--blue);
+    --primary: var(--blue-700);
+    --secondary: var(--blue-500);
+    --accent: var(--blue-900);
     --background: var(--white);
     --font-primary: var(--black);
     --font-secondary: var(--grey-900);
-    --decorative: var(--green-200);
+    --decorative: var(--blue-300);
   }
 }
