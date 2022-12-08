@@ -1,12 +1,17 @@
 ---
 import type { WorkExpItem } from '../data/work-experience';
 
-export interface Props extends WorkExpItem {
-  className?: string;
-}
+export interface Props extends WorkExpItem {}
 
-const { company, dateEnd, dateStart, location, title, projects, className } =
-  Astro.props;
+const {
+  company,
+  dateEnd,
+  dateStart,
+  location,
+  title,
+  projects,
+  class: className,
+} = Astro.props;
 ---
 
 <div class={className}>

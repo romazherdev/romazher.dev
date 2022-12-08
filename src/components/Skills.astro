@@ -1,17 +1,15 @@
 ---
 import { SKILLS } from '../data/skills';
 
-export interface Props {
-  className?: string;
-}
-
-const { className } = Astro.props;
+const { class: className } = Astro.props;
 ---
 
 <section class={className}>
   <h2>Skills</h2>
 
-  <ul class="grid gap-2 lg:gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-1 text-font-secondary">
+  <ul
+    class="grid gap-2 lg:gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-1 text-font-secondary"
+  >
     {SKILLS.map((skillName) => <li>{skillName}</li>)}
   </ul>
 </section>

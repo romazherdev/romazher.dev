@@ -2,11 +2,7 @@
 import { WORK_EXPERIENCE } from '../data/work-experience';
 import JobItem from './JobItem.astro';
 
-export interface Props {
-  className?: string;
-}
-
-const { className } = Astro.props;
+const { class: className } = Astro.props;
 ---
 
 <section class={className}>
