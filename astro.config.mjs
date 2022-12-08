@@ -25,7 +25,7 @@ export default defineConfig({
     sitemap(),
     compress({
       img: false,
-      css: true,
+      css: false,
       html: true,
       js: true,
       svg: true,
