@@ -56,12 +56,6 @@ module.exports = {
           mie: (value) => ({
             marginInlineEnd: value,
           }),
-          mbs: (value) => ({
-            marginBlockStart: value,
-          }),
-          mbe: (value) => ({
-            marginBlockEnd: value,
-          }),
         },
         { values: theme('margin') }
       );
