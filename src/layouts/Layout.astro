@@ -7,9 +7,10 @@ export interface Props {
   title?: string;
   description?: string;
   pageUrl?: string;
+  noIndex?: boolean;
 }
 
-const { title, pageUrl, description } = Astro.props;
+const { title, pageUrl, description, noIndex = false } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -22,10 +23,11 @@ const { title, pageUrl, description } = Astro.props;
     <script is:inline src="/js/theme.js" type="module"></script>
     <meta name="description" content={description} />
     <meta name="theme-color" content="Canvas" />
+    {noIndex && <meta name="robots" content="noindex" />}
     <link rel="icon" type="image/svg+xml" href="/logo/favicon.svg" />
     <link rel="icon" sizes="any" href="/logo/favicon.ico" />
-    <link rel="apple-touch-icon" href="/logo/favicon-180.png">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/logo/favicon-180.png" />
+    <link rel="manifest" href="/manifest.json" />
     <link
       rel="preload"
       href="/fonts/Inter-Regular-subset.woff2"
