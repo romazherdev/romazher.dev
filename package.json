@@ -7,6 +7,7 @@
     "dev": "astro dev",
     "dev:exp": "astro dev --host",
     "start": "astro dev",
+    "start:exp": "astro dev --host",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",

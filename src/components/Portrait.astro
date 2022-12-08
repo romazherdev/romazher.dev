@@ -13,7 +13,7 @@ import { Picture } from '@astrojs/image/components';
     <Picture
       class="mx-auto -mb-[1px]"
       widths={[420, 840, 1260]}
-      sizes="(max-width: 479px) 295px, 420px"
+      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 250px, (max-width: 1440px) 325px, 415px"
       aspectRatio="1.25"
       formats={['avif', 'webp', 'png']}
       src={import('../assets/Photo.png')}
