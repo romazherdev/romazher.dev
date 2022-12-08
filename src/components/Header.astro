@@ -11,9 +11,9 @@ const { pageUrl } = Astro.props;
 
 <header
   id="header"
-  class="py-5 sticky top-0 max-md:border-b border-decorative z-10 bg-background"
+  class="py-5 sticky top-0 max-md:border-b border-decorative z-10 bg-background data-[stuck]:border-b"
 >
-  <div class="container">
+  <div class="container flex items-center justify-between">
     <button
       id="menu-toggle"
       type="button"
@@ -53,11 +53,11 @@ const { pageUrl } = Astro.props;
     </button>
 
     <div
-      class="max-md:fixed max-md:inset-0 max-md:bg-background max-md:-z-10 max-md:-translate-x-full max-md:duration-200 max-md:motion-reduce:duration-0 peer-aria-[expanded=true]:translate-x-0 max-md:shadow-2xl grid grid-rows-[1fr_auto] max-md:justify-center"
+      class="max-md:fixed max-md:inset-0 max-md:-z-10 max-md:-translate-x-full bg-background duration-200 motion-reduce:duration-0 peer-aria-[expanded=true]:translate-x-0 shadow-2xl grid"
     >
       <div
         id="menu_container"
-        class="flex max-md:flex-col justify-end md:justify-between menu-closed max-md:pb-8 max-md:pt-20 gap-12"
+        class="flex md:justify-between menu-closed max-md:py-20"
       >
         <nav
           aria-label="Main"
@@ -80,10 +80,10 @@ const { pageUrl } = Astro.props;
             }
           </ul>
         </nav>
-
-        <ThemeSwitcher />
       </div>
     </div>
+
+    <ThemeSwitcher />
   </div>
 </header>
 
@@ -108,4 +108,12 @@ const { pageUrl } = Astro.props;
     currentlyExpanded ? focusTrap.activate() : focusTrap.deactivate();
     document.body.classList.toggle('menu-opened', currentlyExpanded);
   });
+
+  window.addEventListener(
+    'scroll',
+    () => {
+      header.toggleAttribute('data-stuck', window.scrollY > 50);
+    },
+    true
+  );
 </script>

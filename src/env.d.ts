@@ -1,5 +1,5 @@
 /// <reference types="@astrojs/image/client" />
-type ThemeValue = 'auto' | 'light' | 'dark';
+type ThemeValue = 'light' | 'dark';
 interface Window {
   theme: {
     eventName: string;

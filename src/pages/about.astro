@@ -12,57 +12,57 @@ const pageMeta: PageMeta = {
 };
 ---
 
-<Layout
-  pageUrl={Routing.About.url}
-  pageMeta={pageMeta}
->
-  <section class="container mt-16">
-    <h1
-      class="text-start text-[10vw] font-bold uppercase md:text-[82px] lg:text-[104px] xl:text-9xl mb-4"
-    >
-      About me
-    </h1>
-
-    <div class="layout items-center">
-      <div class="col-span-full md:col-end-6">
-        <Portrait />
-      </div>
-      <div
-        class="col-span-full mt-8 xxs:text-lg xs:text-xl md:col-start-6 md:mis-6 md:text-2xl"
+<Layout pageUrl={Routing.About.url} pageMeta={pageMeta}>
+  <main id="main">
+    <section class="container mt-16">
+      <h1
+        class="text-start text-[10vw] font-bold uppercase md:text-[82px] lg:text-[104px] xl:text-9xl mb-4"
       >
-        <p>I’m Roman Zherdev, a frontend developer based in Prague</p>
-        <p class="mt-4">
-          I enjoy playing video games, table tennis and freaking out my wife
-          <span aria-hidden="true">&#129315;</span>
-        </p>
+        About me
+      </h1>
+
+      <div class="layout items-center">
+        <div class="col-span-full md:col-end-6">
+          <Portrait />
+        </div>
+        <div
+          class="col-span-full mt-8 xxs:text-lg xs:text-xl md:col-start-6 md:mis-6 md:text-2xl"
+        >
+          <p>I’m Roman Zherdev, a frontend developer based in Prague</p>
+          <p class="mt-4">
+            I enjoy playing video games, table tennis and freaking out my wife
+            <span aria-hidden="true">&#129315;</span>
+          </p>
+        </div>
       </div>
+    </section>
+
+    <div class="mt-16 lg:mt-24"></div>
+
+    <div class="container layout gap-y-10">
+      <Work class="col-span-full lg:col-span-8" />
+
+      <Skills />
     </div>
-  </section>
 
-  <div class="mt-16 lg:mt-24"></div>
+    <div class="mt-16"></div>
 
-  <div class="container layout gap-y-10">
-    <Work class="col-span-full lg:col-span-8" />
-
-    <Skills />
-  </div>
-
-  <div class="mt-16"></div>
-
-  <section class="container">
-    <h2>Summary</h2>
-    <p class="mb-2">I am a guy who develops beautiful and handy interfaces</p>
-    <p class="mb-2">
-      I chase best practices and modern technologies for joy and maximum
-      efficiency
-    </p>
-    <p class="mb-2">
-      I love challenging tasks that enable my creativity and expand my skillset
-    </p>
-    <p>
-      And... I have got the cutest cat&nbsp;<span aria-hidden="true"
-        >&#128049;</span
-      >
-    </p>
-  </section>
+    <section class="container">
+      <h2>Summary</h2>
+      <p class="mb-2">I am a guy who develops beautiful and handy interfaces</p>
+      <p class="mb-2">
+        I chase best practices and modern technologies for joy and maximum
+        efficiency
+      </p>
+      <p class="mb-2">
+        I love challenging tasks that enable my creativity and expand my
+        skillset
+      </p>
+      <p>
+        And... I have got the cutest cat&nbsp;<span aria-hidden="true"
+          >&#128049;</span
+        >
+      </p>
+    </section>
+  </main>
 </Layout>
