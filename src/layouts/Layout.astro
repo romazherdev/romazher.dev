@@ -2,6 +2,7 @@
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import OpenGraph from '../components/OpenGraph.astro';
+import SkipLink from '../components/SkipLink.astro';
 import { SITE } from '../data/site';
 import type { MetaOG, PageMeta } from '../models/page-meta';
 import '../styles/style.css';
@@ -61,12 +62,11 @@ const openGraphProps: MetaOG = {
     />
   </head>
   <body class="bg-background text-font-primary">
-    <a
-      class="absolute -left-full top-0 focus:left-0 focus:right-0 z-20 text-center p-1 bg-primary text-background w-32 max-w-full mx-auto"
-      href="#main">Skip navigation</a
-    >
+    <SkipLink />
     <Header pageUrl={pageUrl} />
-    <slot />
+    <main id="main" tabindex="0">
+      <slot />
+    </main>
     <div class="mt-16"></div>
     <Footer />
   </body>
