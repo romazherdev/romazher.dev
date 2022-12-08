@@ -1,16 +1,33 @@
 ---
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import OpenGraph from '../components/OpenGraph.astro';
+import { SITE } from '../data/site';
+import type { MetaOG, PageMeta } from '../models/page-meta';
 import '../styles/style.css';
 
 export interface Props {
-  title?: string;
-  description?: string;
+  pageMeta: PageMeta;
   pageUrl?: string;
   noIndex?: boolean;
 }
 
-const { title, pageUrl, description, noIndex = false } = Astro.props;
+const {
+  pageMeta: { title, description, og },
+  pageUrl,
+  noIndex = false,
+} = Astro.props;
+
+const openGraphProps: MetaOG = {
+  title: og?.title ?? title ?? SITE.name,
+  description: og?.description ?? description,
+  image: {
+    url: `${import.meta.env.SITE}images/cover.jpg`,
+    width: '1200',
+    height: '630',
+  },
+  ...og,
+};
 ---
 
 <!DOCTYPE html>
@@ -19,11 +36,11 @@ const { title, pageUrl, description, noIndex = false } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title ? `${title} - Roman Zherdev` : `Roman Zherdev`}</title>
+    <title>{title ? `${title} - ${SITE.name}` : `${SITE.name}`}</title>
     <script is:inline src="/js/theme.js" type="module"></script>
     <meta name="description" content={description} />
-    <meta name="theme-color" content="Canvas" />
     {noIndex && <meta name="robots" content="noindex" />}
+    <OpenGraph {...openGraphProps} />
     <link rel="icon" type="image/svg+xml" href="/logo/favicon.svg" />
     <link rel="icon" sizes="any" href="/logo/favicon.ico" />
     <link rel="apple-touch-icon" href="/logo/favicon-180.png" />

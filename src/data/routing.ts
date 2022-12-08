@@ -1,5 +1,6 @@
 export const Routing = {
   Home: {
+    title: undefined,
     url: '/',
     label: 'Home',
   },

@@ -1,12 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import type { PageMeta } from '../models/page-meta';
+
+const pageMeta: PageMeta = {
+  title: '404 Not found',
+  description: 'This page does not exist',
+};
 ---
 
-<Layout
-  description="This page does not exist"
-  title="404 Not found"
-  noIndex={true}
->
+<Layout pageMeta={pageMeta} noIndex={true}>
   <section class="container mt-10">
     <h1
       class="text-start text-[10vw] font-bold uppercase md:text-[82px] lg:text-[104px] xl:text-9xl mb-4"

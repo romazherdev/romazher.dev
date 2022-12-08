@@ -1,4 +1,10 @@
 {
+  "name": "Roman Zherdev",
+  "description": "A frontend developer's blog, who is in love with web technologies",
+  "lang": "en",
+  "dir": "ltr",
+  "id": "/",
+  "start_url": "/",
   "icons": [
     { "src": "/logo/favicon-192.png", "type": "image/png", "sizes": "192x192" },
     { "src": "/logo/favicon-512.png", "type": "image/png", "sizes": "512x512" }

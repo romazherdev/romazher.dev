@@ -2,15 +2,19 @@
 import Portrait from '../components/Portrait.astro';
 import Layout from '../layouts/Layout.astro';
 import { Routing } from '../data/routing';
+import type { PageMeta } from '../models/page-meta';
 
+const pageMeta: PageMeta = {
+  title: Routing.Home.title,
+  description: `A frontend developer's blog, who is in love with web technologies`,
+};
 ---
 
-<Layout
-  pageUrl={Routing.Home.url}
-  description="A frontend developer's blog, who is in love with web technologies"
->
+<Layout pageUrl={Routing.Home.url} pageMeta={pageMeta}>
   <section class="container">
-    <p class="mis-[12%] mt-10 xxs:text-left lg:-mb-2 lg:text-xl">
+    <p
+      class="mis-[12%] mt-10 xxs:text-left lg:-mb-2 lg:text-xl text-font-secondary"
+    >
       Hello, my name is
     </p>
     <h1

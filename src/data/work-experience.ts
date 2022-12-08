@@ -1,16 +1,4 @@
-export interface Project {
-  description: string;
-  technologies: string[];
-}
-
-export interface WorkExpItem {
-  company: string;
-  dateStart: string;
-  dateEnd: string;
-  projects: Project[];
-  title?: string;
-  location?: string;
-}
+import type { WorkExpItem } from "../models/work-exp-item";
 
 export const WORK_EXPERIENCE: WorkExpItem[] = [
   {

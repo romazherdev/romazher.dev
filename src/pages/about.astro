@@ -4,12 +4,17 @@ import Layout from '../layouts/Layout.astro';
 import { Routing } from '../data/routing';
 import Skills from '../components/Skills.astro';
 import Work from '../components/Work.astro';
+import type { PageMeta } from '../models/page-meta';
+
+const pageMeta: PageMeta = {
+  title: Routing.About.title,
+  description: 'Work experience, skills, other facts about me',
+};
 ---
 
 <Layout
-  title={Routing.About.title}
   pageUrl={Routing.About.url}
-  description="Work experience, skills, other facts about me"
+  pageMeta={pageMeta}
 >
   <section class="container mt-16">
     <h1
@@ -39,7 +44,7 @@ import Work from '../components/Work.astro';
   <div class="container layout gap-y-10">
     <Work class="col-span-full lg:col-span-8" />
 
-    <Skills class="col-span-full lg:col-start-10 lg:col-end-13" />
+    <Skills />
   </div>
 
   <div class="mt-16"></div>

@@ -1,15 +1,13 @@
 ---
-export interface Props {
-  image?: {
-    url: string;
-    width: string;
-    height: string;
-  };
-}
+import type { MetaOG } from '../models/page-meta';
 
-const { image } = Astro.props;
+interface Props extends MetaOG {}
+
+const { image, title, description } = Astro.props;
+
 ---
-
+{title && <meta property="og:title" content={title} />}
+{description && <meta property="og:description" content={description} />}
 {
   image && (
     <>
