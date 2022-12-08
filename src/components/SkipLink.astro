@@ -3,12 +3,3 @@
   class="absolute -left-full top-0 focus:left-0 focus:right-0 z-20 text-center p-1 bg-primary text-background w-44 max-w-full mx-auto"
   href="#main">Skip navigation</a
 >
-<script>
-  (document.getElementById('skip_link') as HTMLLinkElement).addEventListener(
-    'click',
-    () => {
-      console.log('LOG');
-      document.getElementById('main')?.focus();
-    }
-  );
-</script>
