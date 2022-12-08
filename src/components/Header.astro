@@ -3,7 +3,7 @@ import { NAVIGATION } from '../data/routing';
 import ThemeSwitcher from './ThemeSwitcher.astro';
 
 export interface Props {
-  pageUrl: string;
+  pageUrl?: string;
 }
 
 const { pageUrl } = Astro.props;
