@@ -3,7 +3,8 @@ const switcherSelector = '[data-theme-switcher]';
 const darkPreferenceMedia = window.matchMedia('(prefers-color-scheme: dark)');
 
 const userPrefersDark = () => darkPreferenceMedia.matches;
-const getThemePreference = () => localStorage.getItem(storageKey) || (userPrefersDark() ? 'dark' : 'light');
+const getThemePreference = () =>
+  localStorage.getItem(storageKey) || (userPrefersDark() ? 'dark' : 'light');
 
 window.theme = {
   eventName: 'themechange',

@@ -1,4 +1,4 @@
-import type { WorkExpItem } from "../models/work-exp-item";
+import type { WorkExpItem } from '../models/work-exp-item';
 
 export const WORK_EXPERIENCE: WorkExpItem[] = [
   {

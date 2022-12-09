@@ -4,8 +4,8 @@ import type { MetaOG } from '../models/page-meta';
 interface Props extends MetaOG {}
 
 const { image, title, description } = Astro.props;
-
 ---
+
 {title && <meta property="og:title" content={title} />}
 {description && <meta property="og:description" content={description} />}
 {

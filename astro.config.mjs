@@ -7,13 +7,13 @@ import tailwind from '@astrojs/tailwind';
 import image from '@astrojs/image';
 
 // https://astro.build/config
-import sitemap from "@astrojs/sitemap";
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
-import compress from "astro-compress";
+import compress from 'astro-compress';
 
 // https://astro.build/config
-import mdx from "@astrojs/mdx";
+import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
@@ -21,11 +21,11 @@ export default defineConfig({
   integrations: [
     tailwind({
       config: {
-        applyBaseStyles: false
-      }
+        applyBaseStyles: false,
+      },
     }),
     image({
-      serviceEntryPoint: '@astrojs/image/sharp'
+      serviceEntryPoint: '@astrojs/image/sharp',
     }),
     sitemap(),
     compress({
@@ -33,8 +33,8 @@ export default defineConfig({
       css: false,
       html: true,
       js: true,
-      svg: true
+      svg: true,
     }),
     mdx(),
-  ]
+  ],
 });
