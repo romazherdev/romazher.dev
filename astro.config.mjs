@@ -13,6 +13,9 @@ import sitemap from "@astrojs/sitemap";
 import compress from "astro-compress";
 
 // https://astro.build/config
+import mdx from "@astrojs/mdx";
+
+// https://astro.build/config
 export default defineConfig({
   site: 'https://romazher.dev/',
   integrations: [
@@ -21,14 +24,17 @@ export default defineConfig({
         applyBaseStyles: false
       }
     }),
-    image({ serviceEntryPoint: '@astrojs/image/sharp' }),
+    image({
+      serviceEntryPoint: '@astrojs/image/sharp'
+    }),
     sitemap(),
     compress({
       img: false,
       css: false,
       html: true,
       js: true,
-      svg: true,
+      svg: true
     }),
+    mdx(),
   ]
 });
