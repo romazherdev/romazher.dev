@@ -12,6 +12,7 @@
     "dev": "astro dev",
     "dev:exp": "astro dev --host",
     "build": "astro build",
+    "build:all": "astro build --drafts",
     "preview": "astro preview --host",
     "astro": "astro",
     "prettier": "prettier -w ."

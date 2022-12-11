@@ -2,11 +2,11 @@
 import { NAVIGATION } from '../data/routing';
 import ThemeSwitcher from './ThemeSwitcher.astro';
 
-export interface Props {
-  pageUrl?: string;
-}
-
-const { pageUrl } = Astro.props;
+const activeRoute =
+  Astro.url.pathname.length > 1
+    ? Astro.url.pathname.replace(/\/$/, '')
+    : Astro.url.pathname; // root "/"
+const isActiveRoute = (url: string) => activeRoute === url;
 ---
 
 <header
@@ -71,7 +71,7 @@ const { pageUrl } = Astro.props;
                   <a
                     class="w-1/3 border-b-2 border-transparent pb-2 text-base uppercase text-font-secondary no-underline hover:border-font-primary hover:text-font-primary max-md:text-2xl aria-[current=page]:text-font-primary aria-[current=page]:!border-primary"
                     href={url}
-                    aria-current={pageUrl === url ? 'page' : 'false'}
+                    aria-current={isActiveRoute(url) ? 'page' : 'false'}
                   >
                     {label}
                   </a>

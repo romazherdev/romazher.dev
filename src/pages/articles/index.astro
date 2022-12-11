@@ -1,0 +1,42 @@
+---
+import H1 from '../../components/H1.astro';
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const articles = (await Astro.glob('./*/*.mdx')).filter(
+  (art) => !art.frontmatter.draft
+);
+---
+
+<PageLayout description="Articles about frontend and other web topics">
+  <section>
+    <H1>Articles</H1>
+
+    {
+      articles.length > 0 ? (
+        <ul class="grid xs:grid-cols-2 lg:grid-cold-3 xl:grid-cols-4">
+          {articles.map((art) => (
+            <li>
+              <article class="relative rounded-lg border-2 border-accent px-4 py-3">
+                <h3>
+                  <a
+                    href={art.url}
+                    class="before:content-[''] before:absolute before:inset-0 no-underline text-accent"
+                  >
+                    {art.frontmatter.title}
+                  </a>
+                </h3>
+              </article>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <>
+          <p>Unfortunately, there are not articles yet.</p>
+          <p>
+            Please, use this link to get to the <a href="/">home page</a>
+          </p>
+        </>
+      )
+    }
+  </section>
+</PageLayout>

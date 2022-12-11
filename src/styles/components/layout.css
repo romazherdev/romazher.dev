@@ -1,5 +1,0 @@
-@layer components {
-  .layout {
-    @apply grid grid-cols-12 gap-x-[10px] lg:gap-x-[20px];
-  }
-}

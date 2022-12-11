@@ -1,26 +1,19 @@
 ---
 import Portrait from '../components/Portrait.astro';
-import Layout from '../layouts/Layout.astro';
-import { Routing } from '../data/routing';
 import Skills from '../components/Skills.astro';
 import Work from '../components/Work.astro';
-import type { PageMeta } from '../models/page-meta';
-
-const pageMeta: PageMeta = {
-  title: Routing.About.title,
-  description: 'Work experience, skills, other facts about me',
-};
+import H1 from '../components/H1.astro';
+import PageLayout from '../layouts/PageLayout.astro';
 ---
 
-<Layout pageUrl={Routing.About.url} pageMeta={pageMeta}>
-  <section class="pt-16">
-    <h1
-      class="text-start text-[10vw] font-bold uppercase md:text-[82px] lg:text-[104px] xl:text-9xl mb-4"
-    >
-      About me
-    </h1>
+<PageLayout
+  title="About"
+  description="Work experience, skills, other facts about me"
+>
+  <section>
+    <H1>About me</H1>
 
-    <div class="layout items-center">
+    <div class="grid grid-cols-12 gap-x-5 items-center">
       <div class="col-span-full md:col-end-6">
         <Portrait />
       </div>
@@ -38,7 +31,7 @@ const pageMeta: PageMeta = {
 
   <div class="mt-16 lg:mt-24"></div>
 
-  <div class="layout gap-y-10">
+  <div class="grid grid-cols-12 gap-x-3 md:gap-x-5 gap-y-10">
     <Work class="col-span-full lg:col-span-8" />
 
     <Skills class="col-span-full lg:col-start-10 lg:col-end-13" />
@@ -62,4 +55,4 @@ const pageMeta: PageMeta = {
       >
     </p>
   </section>
-</Layout>
+</PageLayout>

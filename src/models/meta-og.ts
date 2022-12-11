@@ -7,9 +7,3 @@ export interface MetaOG {
   title?: string;
   description?: string;
 }
-
-export interface PageMeta {
-  description: string;
-  title?: string;
-  og?: MetaOG;
-}

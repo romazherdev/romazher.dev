@@ -6,7 +6,6 @@
 @import 'tailwindcss/components';
 @import './components/container.css';
 @import './components/menu.css';
-@import './components/layout.css';
 
 @import 'tailwindcss/utilities';
 

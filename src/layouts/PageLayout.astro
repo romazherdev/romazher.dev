@@ -1,0 +1,20 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import SkipLink from '../components/SkipLink.astro';
+import BaseLayout, { BaseLayoutProps } from './BaseLayout.astro';
+
+type Props = BaseLayoutProps;
+
+const props = Astro.props;
+---
+
+<BaseLayout {...props}>
+  <SkipLink anchorId="skip_link" />
+  <Header />
+  <main id="main" class="container pt-6">
+    <slot />
+  </main>
+  <div class="mt-16"></div>
+  <Footer />
+</BaseLayout>

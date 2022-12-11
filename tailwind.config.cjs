@@ -40,6 +40,13 @@ module.exports = {
       sans: ['Inter', 'sans-serif'],
     },
     extend: {
+      fontSize: {
+        '5xl': ['3rem', '1.15'],
+        '6xl': ['3.75rem', '1.15'],
+        '7xl': ['4.5rem', '1.15'],
+        '8xl': ['6rem', '1.15'],
+        '9xl': ['8rem', '1.15'],
+      },
       transitionDuration: {
         0: '0ms',
       },

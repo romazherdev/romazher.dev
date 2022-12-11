@@ -6,6 +6,7 @@
     --pink-900: hsl(271, 48%, 20%);
 
     --green-300: hsl(168, 80%, 48%);
+    --green-700: hsl(176, 39%, 26%);
 
     --grey-400: hsl(0, 0%, 70%);
     --grey-900: hsl(255, 10%, 25%);
@@ -34,7 +35,7 @@
   :root:not(.dark) {
     --primary: var(--blue-700);
     --secondary: var(--blue-500);
-    --accent: var(--blue-900);
+    --accent: var(--green-700);
     --background: var(--white);
     --font-primary: var(--black);
     --font-secondary: var(--grey-900);

@@ -1,27 +1,23 @@
 ---
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
 import OpenGraph from '../components/OpenGraph.astro';
-import SkipLink from '../components/SkipLink.astro';
 import { SITE } from '../data/site';
-import type { MetaOG, PageMeta } from '../models/page-meta';
+import type { MetaOG } from '../models/meta-og';
 import '../styles/style.css';
 
+export type { Props as BaseLayoutProps };
+
 export interface Props {
-  pageMeta: PageMeta;
-  pageUrl?: string;
+  title?: string;
+  description?: string;
+  og?: MetaOG;
   noIndex?: boolean;
 }
 
-const {
-  pageMeta: { title, description, og },
-  pageUrl,
-  noIndex = false,
-} = Astro.props;
+const { title, description, og, noIndex = false } = Astro.props;
 
 const openGraphProps: MetaOG = {
-  title: og?.title ?? title ?? SITE.name,
-  description: og?.description ?? description,
+  title: title ?? SITE.name,
+  description: description,
   image: {
     url: `${import.meta.env.SITE}images/cover.jpg`,
     width: '1200',
@@ -62,12 +58,6 @@ const openGraphProps: MetaOG = {
     />
   </head>
   <body class="bg-background text-font-primary">
-    <SkipLink />
-    <Header pageUrl={pageUrl} />
-    <main id="main" class="container">
-      <slot />
-    </main>
-    <div class="mt-16"></div>
-    <Footer />
+    <slot />
   </body>
 </html>
