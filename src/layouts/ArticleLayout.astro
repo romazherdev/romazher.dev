@@ -36,7 +36,6 @@ const { frontmatter } = Astro.props;
         <time class="shrink-0" datetime={frontmatter.createdAt}
           >{new Date(frontmatter.createdAt).toDateString()}</time
         >
-        <hr class="!m-0 w-full" />
         <p class="text-right !m-0 shrink-0">{frontmatter.minutesRead}</p>
       </div>
       <slot />

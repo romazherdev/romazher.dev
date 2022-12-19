@@ -13,11 +13,11 @@ As a frontend developer, I have always wanted to have a fancy personal website t
 everyone, so they know how cool I am.
 ![Doge (meme) in sunglasses](/images/memes/doge.webp)
 
-A few years ago I created [one](https://romazherdev.github.io/). It was my very first experience with React. However, lately I've become embarrassed about it. I mean, it wasn't completely bad, but, as my experience progressed, more and more things on that website seemed irrelevant or badly implemented. Moreover, now I want to turn it into a blog. Even Google Lighthouse shows poor numbers for the old one:
+A few years ago I created [one](https://romazherdev.github.io/). It was my very first experience with React. However, lately I've become embarrassed about it. I mean, it wasn't completely bad, but, as my experience progressed, more and more things on that website seemed irrelevant or badly implemented. Moreover, now I want to turn it into a blog. Even Google Lighthouse shows poor numbers for the old one, but I was able to fix that:
 
-![Google Lighthouse report for the old website with mediocre numbers](/images/articles/my-experience-of-using-astro/old-website-lighthouse.webp)
-
-Let's fix that!
+|Old|New|
+|-|-|
+|![Google Lighthouse report for the old website with mediocre numbers](/images/articles/my-experience-of-using-astro/old-website-lighthouse.webp)|![Google Lighthouse report for the new website with perfect numbers](/images/articles/my-experience-of-using-astro/new-website-lighthouse.webp)|
 
 ## Choosing the right technologies
 
@@ -43,6 +43,31 @@ From that point I started enjoying the process much more. I found myself spendin
 
 ![Bruce Almighty coding](/images/memes/bruce-almighty-coding.webp)
 
+Here is an example of how an Astro component can look like:
+
+```astro
+---
+// Server side script
+interface Props {
+  url: string;
+  title: string;
+  description: string;
+}
+const { url, title, description } = Astro.props;
+---
+<!--Template-->
+<article>
+  <h3>
+    <a href={url}>{title}</a>
+  </h3>
+  <p>{description}</p>
+</article>
+
+<script>
+// Client side script
+</script>
+```
+
 I could try to explain in details every step of my development:
 - how I implemented theme switcher
 - optimized Core Web Vitals metrics
@@ -56,7 +81,7 @@ Instead we're going to fast-forward to the point when the website is complete.
 
 Now we can talk about particular use cases and things that make Astro so good.
 
-### Time to production
+### From start to production
 
 Developers should spend their time implementing features, NOT setting up a project using legacy build tools and manually integrating all technologies that are considered defaults for modern frontend development. All of that requires time to introduce and support in future.
 
@@ -108,9 +133,7 @@ After the development part was done, I just created a free Netlify account, conn
 
 ## Conclusion
 
-So far it's been an awesome developer experience and I highly recommend at least trying to use Astro if you think it should work in your case. And yeah, check out the new Google Lighthouse report:
-
-![Google Lighthouse report for the new website with perfect numbers](/images/articles/my-experience-of-using-astro/new-website-lighthouse.webp)
+So far it's been an awesome developer experience and I highly recommend at least trying to use Astro if you think it should work in your case.
 
 ## Resources
 
