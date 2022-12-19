@@ -22,17 +22,21 @@ const { frontmatter } = Astro.props;
     <header
       class="bg-decorative py-12 mb-6 lg:mb-12 border-t border-b border-primary"
     >
-      <h1
-        class="uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold container text-secondary"
-      >
-        {frontmatter.title}
-      </h1>
+      <div class="prose md:prose-xl mx-auto px-3">
+        <h1
+          class="uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-secondary"
+        >
+          {frontmatter.title}
+        </h1>
+      </div>
     </header>
 
     <div class="prose md:prose-xl dark:prose-invert mx-auto px-3">
       <div class="flex justify-between items-center gap-4 text-font-secondary">
-        <time class="shrink-0" datetime={frontmatter.createdAt}>{new Date(frontmatter.createdAt).toDateString()}</time>
-        <hr class="!m-0 w-full">
+        <time class="shrink-0" datetime={frontmatter.createdAt}
+          >{new Date(frontmatter.createdAt).toDateString()}</time
+        >
+        <hr class="!m-0 w-full" />
         <p class="text-right !m-0 shrink-0">{frontmatter.minutesRead}</p>
       </div>
       <slot />
