@@ -13,4 +13,4 @@ export const Routing = {
   },
 };
 
-export const NAVIGATION = [Routing.Home, Routing.About];
+export const NAVIGATION = [Routing.Home, Routing.About, Routing.Articles];

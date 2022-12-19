@@ -1,0 +1,9 @@
+---
+import ArticleList from './ArticleList.astro';
+
+const recentArticles = (await Astro.glob('../pages/articles/*/*.mdx')).filter(
+  (art) => !art.frontmatter.draft
+).slice(0, 4);
+---
+
+<ArticleList articles={recentArticles} />

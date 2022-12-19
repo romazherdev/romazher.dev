@@ -5,7 +5,12 @@ import Header from '../components/Header.astro';
 import SkipLink from '../components/SkipLink.astro';
 import BaseLayout, { BaseLayoutProps } from './BaseLayout.astro';
 
-type Props = MarkdownLayoutProps<BaseLayoutProps>;
+interface ArticlePageProps extends BaseLayoutProps {
+  minutesRead: string;
+  createdAt: string;
+}
+
+type Props = MarkdownLayoutProps<ArticlePageProps>;
 
 const { frontmatter } = Astro.props;
 ---
@@ -13,14 +18,26 @@ const { frontmatter } = Astro.props;
 <BaseLayout {...frontmatter}>
   <SkipLink anchorId="skip_link" />
   <Header />
-  <main id="main" class="container pt-6">
-    <h1
-      class="uppercase text-2xl md:text-4xl lg:text-6xl xl:text-7xl font-bold"
+  <main id="main">
+    <header
+      class="bg-decorative py-12 mb-6 lg:mb-12 border-t border-b border-primary"
     >
-      {frontmatter.title}
-    </h1>
-    <slot />
+      <h1
+        class="uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold container text-secondary"
+      >
+        {frontmatter.title}
+      </h1>
+    </header>
+
+    <div class="prose md:prose-xl dark:prose-invert mx-auto px-3">
+      <div class="flex justify-between items-center gap-4 text-font-secondary">
+        <time class="shrink-0" datetime={frontmatter.createdAt}>{new Date(frontmatter.createdAt).toDateString()}</time>
+        <hr class="!m-0 w-full">
+        <p class="text-right !m-0 shrink-0">{frontmatter.minutesRead}</p>
+      </div>
+      <slot />
+    </div>
   </main>
   <div class="mt-16"></div>
-  <Footer />
+  <Footer class="mt-auto" />
 </BaseLayout>

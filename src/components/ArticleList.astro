@@ -1,0 +1,24 @@
+---
+import type { MDXInstance } from 'astro';
+import Article from './Article.astro';
+
+interface Props {
+  articles: MDXInstance<Record<string, any>>[];
+}
+
+const { articles } = Astro.props;
+---
+
+<ul class="grid sm:grid-cols-2 lg:grid-cold-3">
+  {
+    articles.map((art) => (
+      <li>
+        <Article
+          url={art.url}
+          title={art.frontmatter.title}
+          description={art.frontmatter.description}
+        />
+      </li>
+    ))
+  }
+</ul>

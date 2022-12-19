@@ -1,5 +1,6 @@
 ---
 import Portrait from '../components/Portrait.astro';
+import RecentArticles from '../components/RecentArticles.astro';
 import PageLayout from '../layouts/PageLayout.astro';
 ---
 
@@ -37,12 +38,12 @@ import PageLayout from '../layouts/PageLayout.astro';
   <div class="mt-16 lg:mt-24"></div>
 
   <section>
-    <h2>Articles</h2>
-    <p>
-      Unfortunately, I have not made a single article just yet, but I wish to do
-      that soon. Meanwhile, you can read more <a href="/about">about&nbsp;me</a>
-      if you are interested.
-    </p>
+    <div class="flex items-center justify-between mb-2">
+      <h2 class="mb-0">Articles</h2>
+      <a href="/articles">View all</a>
+    </div>
+
+    <RecentArticles />
   </section>
 
   <div class="mt-16"></div>

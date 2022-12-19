@@ -1,0 +1,119 @@
+---
+layout: '../../../layouts/ArticleLayout.astro'
+title: 'My experience of using Astro'
+description: 'An attempt to explain why and for what purposes the framework is so damn good'
+og: { image: 'images/articles/my-experience-of-using-astro/cover.jpg' }
+createdAt: '2022-12-19'
+draft: false
+---
+
+## Background
+
+As a frontend developer, I have always wanted to have a fancy personal website that I would be able to share with
+everyone, so they know how cool I am.
+![Doge (meme) in sunglasses](/images/memes/doge.webp)
+
+A few years ago I created [one](https://romazherdev.github.io/). It was my very first experience with React. However, lately I've become embarrassed about it. I mean, it wasn't completely bad, but, as my experience progressed, more and more things on that website seemed irrelevant or badly implemented. Moreover, now I want to turn it into a blog. Even Google Lighthouse shows poor numbers for the old one:
+
+![Google Lighthouse report for the old website with mediocre numbers](/images/articles/my-experience-of-using-astro/old-website-lighthouse.webp)
+
+Let's fix that!
+
+## Choosing the right technologies
+
+First and foremost, if you want to build a static website, you don't need to use a SPA framework. You need a static site generator. Because:
+
+- it works fast
+- SEO friendly
+- no additional work to implement SSR
+
+It's easy to guess from the article's name that I chose [Astro](https://astro.build/), but in reality the initial commit in my repo looks like this: _"Initialize 11ty Blog project"_. I don't want to say anything bad about [Eleventy](https://www.11ty.dev/), but for me it didn't work out. There is a phrase on their home page:
+
+> Eleventy, a simpler static site generator.
+
+The funny thing is, it was most likely my hardest experience learning a framework. The problem is in their docs. It just doesn't make sense to me. Instead of having a structured guide, you have to look at some example project and templates.
+
+Just to be clear, I appreciate the effort that stands behind Eleventy and I am pretty sure it is a great tool that solves certain problems. However, it feels like Astro solves them too, but on another level.
+
+There were other candidates, but they've never interested me. So, after a couple of days I quickly migrated to Astro.
+
+## First steps with Astro
+
+From that point I started enjoying the process much more. I found myself spending less time in the docs, but writing code, because everything was so intuitive and familiar. Any time a question appeared in my mind, I would instantly find an answer.
+
+![Bruce Almighty coding](/images/memes/bruce-almighty-coding.webp)
+
+I could try to explain in details every step of my development:
+- how I implemented theme switcher
+- optimized Core Web Vitals metrics
+- hated and fell in love with Tailwind
+
+but all of that sounds like topics for other articles.
+
+Instead we're going to fast-forward to the point when the website is complete.
+
+![A few moments later meme from Sponge Bob](/images/memes/a-few-moments-later.webp)
+
+Now we can talk about particular use cases and things that make Astro so good.
+
+### Time to production
+
+Developers should spend their time implementing features, NOT setting up a project using legacy build tools and manually integrating all technologies that are considered defaults for modern frontend development. All of that requires time to introduce and support in future.
+
+You are paid for solving business problems, not developer problems. Astro gives you the ability to focus on what is in fact important.
+
+And please, do not try to compare it to your favorite SPA framework. Try reading more about [why Astro](https://docs.astro.build/en/concepts/why-astro/).
+
+### Learning curve
+
+I've already said enough about docs and the fact that Astro feels very intuitive. The reason behind that is you usually deal with the good old things like native HTML, script tags, CSS or something like JSX, but all of that is like on steroids:
+
+- scoped styles and scripts
+- HTML templating
+- markdown support
+- hydration strategies (e.g. when a component becomes visible)
+- and more
+
+### Lightning fast
+
+When it comes to time for a browser in order to process a webpage, nothing can beat static HTML, which means that good Core Web Vitals metrics are almost guaranteed.
+
+![There is nothing faster than the speed of light. Even static HTML?](/images/memes/static-html-meme.webp)
+
+### Easy integration with popular tools
+
+There are dozens of popular tools that can be easily integrated with Astro. For example, if you want to add Tailwind, you can run this command:
+
+```bash
+npx astro add tailwind
+```
+
+And that's it! You can start using Tailwind right away.
+
+## Reasons for not using Astro
+
+Although, Astro is a great framework it might be not your choice. Let's talk about reasons for that.
+
+### You need a global client state
+
+It is not a single page app, which means you get a brand new page every time you navigate through your website, which makes usage of traditional global stores almost impossible. However, there is a guide how you can [share state](https://docs.astro.build/en/core-concepts/sharing-state/) in Astro.
+
+### You don't need MPA
+
+If you are developing something like a back office application, which means you don't need SEO, you are mostly working with dynamic content, complex forms, validation, having tons of AJAX requests, you don't need Astro. Just choose any SPA framework you feel comfortable working with.
+
+## Deployment
+
+After the development part was done, I just created a free Netlify account, connected my repo and that's it. After a few seconds my code was deployed.
+
+## Conclusion
+
+So far it's been an awesome developer experience and I highly recommend at least trying to use Astro if you think it should work in your case. And yeah, check out the new Google Lighthouse report:
+
+![Google Lighthouse report for the new website with perfect numbers](/images/articles/my-experience-of-using-astro/new-website-lighthouse.webp)
+
+## Resources
+
+- [GitHub repository](https://github.com/romazherdev/romazher.dev)
+- [Astro](https://astro.build/)
+- [Eleventy](https://www.11ty.dev/)
