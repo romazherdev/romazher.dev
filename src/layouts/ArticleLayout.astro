@@ -13,6 +13,10 @@ interface ArticlePageProps extends BaseLayoutProps {
 type Props = MarkdownLayoutProps<ArticlePageProps>;
 
 const { frontmatter } = Astro.props;
+const formatdate = (date: Date) =>
+  new Intl.DateTimeFormat('en-US', {
+    dateStyle: 'medium',
+  }).format(date);
 ---
 
 <BaseLayout {...frontmatter}>
@@ -24,20 +28,22 @@ const { frontmatter } = Astro.props;
     >
       <div class="prose md:prose-xl mx-auto px-3">
         <h1
-          class="uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-secondary"
+          class="uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-secondary !mb-0"
         >
           {frontmatter.title}
         </h1>
+
+        <div class="flex -mb-12 mt-4 justify-start items-center text-secondary">
+          <p class="!m-0">
+            <time datetime={frontmatter.createdAt}
+              >{formatdate(new Date(frontmatter.createdAt))}</time
+            > - {frontmatter.minutesRead}
+          </p>
+        </div>
       </div>
     </header>
 
     <div class="prose md:prose-xl dark:prose-invert mx-auto px-3">
-      <div class="flex justify-between items-center gap-4 text-font-secondary">
-        <time class="shrink-0" datetime={frontmatter.createdAt}
-          >{new Date(frontmatter.createdAt).toDateString()}</time
-        >
-        <p class="text-right !m-0 shrink-0">{frontmatter.minutesRead}</p>
-      </div>
       <slot />
     </div>
   </main>
