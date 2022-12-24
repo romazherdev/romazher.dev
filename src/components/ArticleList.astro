@@ -9,12 +9,13 @@ interface Props {
 const { articles } = Astro.props;
 ---
 
-<ul class="grid sm:grid-cols-2 lg:grid-cold-3">
+<ul class="grid sm:grid-cols-2 lg:grid-cold-3 gap-4">
   {
     articles.map((art) => (
       <li>
         <Article
-          url={art.url}
+          class="h-full"
+          url={art.url || ''}
           title={art.frontmatter.title}
           description={art.frontmatter.description}
         />
