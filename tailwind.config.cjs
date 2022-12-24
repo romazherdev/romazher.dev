@@ -40,6 +40,24 @@ module.exports = {
       sans: ['Inter', 'sans-serif'],
     },
     extend: {
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            'blockquote p:first-of-type::before': {
+              content: '',
+            },
+            'blockquote p:last-of-type::after': {
+              content: '',
+            },
+            'code::before': {
+              content: '',
+            },
+            'code::after': {
+              content: '',
+            },
+          },
+        },
+      }),
       fontSize: {
         '5xl': ['3rem', '1.15'],
         '6xl': ['3.75rem', '1.15'],
