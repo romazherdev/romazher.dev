@@ -1,27 +1,53 @@
 ---
+import { formatDate } from '../helpers/format-date';
+
 interface Props {
   title: string;
   description: string;
   url: string;
+  createdAt: string;
+  draft?: boolean;
   class?: string;
 }
 
-const { url, title, description, class: className } = Astro.props;
+const {
+  url,
+  title,
+  description,
+  class: className,
+  draft,
+  createdAt,
+} = Astro.props;
 ---
 
 <article
-  class:list={new Set([
-    'relative rounded-lg border-2 px-4 py-3 border-decorative hover:border-primary',
+  class:list={[
+    'relative rounded-lg border-2 px-4 py-3 grid border-decorative',
     className,
-  ])}
+    {
+      'hover:border-primary': !draft,
+      'opacity-75': draft,
+    },
+  ]}
 >
   <h3 class="text-2xl font-bold">
-    <a
-      href={url}
-      class="before:content-[''] before:absolute before:inset-0 no-underline text-primary"
-    >
-      {title}
-    </a>
+    {
+      draft ? (
+        <span class="text-primary">{title}</span>
+      ) : (
+        <a
+          href={url}
+          class="before:content-[''] before:absolute before:inset-0 no-underline text-primary"
+        >
+          {title}
+        </a>
+      )
+    }
   </h3>
   <p class="mt-2">{description}</p>
+
+  <p class="text-font-secondary mt-auto flex justify-between pt-2 items-center">
+    {draft && <span class="bg-primary rounded-md py-1 px-3 text-background text-sm font-bold">Draft</span>}
+    <time class="mis-auto" datetime={createdAt}>{formatDate(createdAt)}</time>
+  </p>
 </article>

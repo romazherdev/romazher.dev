@@ -3,6 +3,7 @@ import type { MarkdownLayoutProps } from 'astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import SkipLink from '../components/SkipLink.astro';
+import { formatDate } from '../helpers/format-date';
 import BaseLayout, { BaseLayoutProps } from './BaseLayout.astro';
 
 interface ArticlePageProps extends BaseLayoutProps {
@@ -13,10 +14,6 @@ interface ArticlePageProps extends BaseLayoutProps {
 type Props = MarkdownLayoutProps<ArticlePageProps>;
 
 const { frontmatter } = Astro.props;
-const formatdate = (date: Date) =>
-  new Intl.DateTimeFormat('en-US', {
-    dateStyle: 'medium',
-  }).format(date);
 ---
 
 <BaseLayout {...frontmatter}>
@@ -36,7 +33,7 @@ const formatdate = (date: Date) =>
         <div class="flex -mb-12 mt-4 justify-start items-center text-secondary">
           <p class="!m-0">
             <time datetime={frontmatter.createdAt}
-              >{formatdate(new Date(frontmatter.createdAt))}</time
+              >{formatDate(frontmatter.createdAt)}</time
             > - {frontmatter.minutesRead}
           </p>
         </div>

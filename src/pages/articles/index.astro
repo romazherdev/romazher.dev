@@ -3,9 +3,7 @@ import ArticleList from '../../components/ArticleList.astro';
 import H1 from '../../components/H1.astro';
 import PageLayout from '../../layouts/PageLayout.astro';
 
-const articles = (await Astro.glob('./*/*.mdx')).filter(
-  (art) => !art.frontmatter.draft
-);
+const articles = (await Astro.glob('./*/*.mdx'));
 ---
 
 <PageLayout description="Articles about frontend and other web topics">
