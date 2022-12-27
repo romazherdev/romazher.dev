@@ -5,6 +5,7 @@ import image from '@astrojs/image';
 import sitemap from '@astrojs/sitemap';
 import compress from 'astro-compress';
 import mdx from '@astrojs/mdx';
+import remarkToc from 'remark-toc';
 import { remarkReadingTime } from './src/plugins/remark-reading-time.mjs';
 
 export default defineConfig({
@@ -27,7 +28,7 @@ export default defineConfig({
       svg: true,
     }),
     mdx({
-      remarkPlugins: [remarkReadingTime],
+      remarkPlugins: [remarkReadingTime, remarkToc],
       extendDefaultPlugins: true,
     }),
   ],
