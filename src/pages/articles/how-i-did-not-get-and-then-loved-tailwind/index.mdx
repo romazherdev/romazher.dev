@@ -1,0 +1,137 @@
+---
+layout: '../../../layouts/ArticleLayout.astro'
+title: 'How I did not get and then loved Tailwind'
+description: 'For those who do not understand or hesitates to try Tailwind'
+og: { image: 'images/articles/how-i-did-not-get-and-then-loved-tailwind/cover.jpg' }
+createdAt: '2022-12-27'
+draft: true
+---
+
+## Background
+
+I remember the day I first saw Tailwind. "Why would anyone in their right mind use it?", &ndash; I thought. I believe, many of you had a similar question in your minds. If you still don't get this CSS framework, this article is for you.
+
+## Challenges with CSS
+
+Before trying to understand Tailwind, we have to identify the pain points of traditional CSS. Here are some from my experience:
+
+- Scalability &ndash; the more CSS you have the harder it is to manage. The same goes about the number of developers sharing the same code base.
+- Component architecture &ndash; this is what stands behind modern frontend frameworks and there is no secret that CSS was not designed for that. We keep introducing new tools and methodologies to deal with that (CSS modules, BEM, styled components, etc.). 
+- CSS libraries &ndash; Bootstrap, Material UI, UIKit anything like that are huge and, most importantly, **opinionated** additions for your codebase that apply strict rules (limitations) about how you should write your code.
+- Duplicated & unused CSS &ndash; is what can drastically affect the bundle size and performance of your app.
+- Inconsistency &ndash; you might and should have strict and detailed guidelines about how people have to write CSS, but that sounds like additional work to setup & stick to.
+
+Now we can try to take a closer look at Tailwind and see what it offers to solve mentioned problems. Spoiler alert: not only does it solve them, it offers you a great style system considering plenty crucial details that you usually don't think about with absurdly high level of flexibility.
+
+## What is Tailwind?
+
+> A utility-first CSS framework packed with classes like <b>`flex`</b>, <b>`pt-4`</b>, <b>`text-center`</b> and <b>`rotate-90`</b> that can be composed to build any design, directly in your markup.
+>
+> -- <cite>https://tailwindcss.com/</cite>
+
+Is that all? I heard that Bootstrap has utility classes too. Does that mean that instead of having my styles properly structured in separate files, I end up with HTML templates like this:
+
+```html
+<img
+  class="w-24 h-24 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
+  src="/photo.jpg"
+  alt="Photo"
+  ...
+/>
+```
+
+"Eughh! That's disgusting", &ndash; here's what I thought when I first time saw Tailwind. Frankly speaking, I went through 4 stages before I accepted the framework. I believe, you're gonna go through them too if you give it a chance, so let's have you prepared.
+
+### 1. I don't get it
+
+The fact that I have to move my code from CSS to HTML writing huge classes blew up my mind. "This is not how CSS is supposed to be written", &ndash; I thought.
+
+### 2. I should give it a chance
+
+After checking out this [CSS frameworks rankings](https://2021.stateofcss.com/en-US/technologies/css-frameworks/), hearing some inspiring feedback, and seeing the benefit of smaller bundle size by removing unused CSS and duplicate code, I changed my mind and decided to give it a chance.
+
+### 3. It's so unnatural, I hate it
+
+In the first couple of days of using Tailwind I went through denial and anger. My problem was that I was trying to apply my experience on a technology that is supposed to be beneficial only after you toggle a switch in your head that says "I am no longer writing CSS the old way". I kept trying to implement the things I had already built hundreds of times the same way, but in reality I had to learn a new way.
+
+That was the crucial moment. It actually happens to people all the time they face unfamiliar things. Our brain tries to choose the easiest path. If I already know how to do something, why would I need to learn how to do that in a different way?
+
+> If the only tool you have is a hammer, it is tempting to treat everything as if it were a nail.
+>
+> -- [Abraham Maslow](https://en.wikipedia.org/wiki/Law_of_the_instrument)
+
+### 4. That feels so damn good
+
+I think I skipped the bargaining and depression and went straight to acceptance. After some fundamentals settled down in my head, I started enjoying the process and seeing the good parts of the framework. Let's talk about them in details.
+
+## Why Tailwind is good
+
+Because it addresses previously mentioned challenges, like:
+
+### Scalability
+
+You don't need to worry about where your CSS lives, how to optimally reuse it, what class names to use and so on. The framework will take care of that. You just need write code. 
+
+It does not matter how big your codebase is, because at some point the CSS part of your bundle size stops growing.
+Pardon my drawing skills, but I allowed myself to prepare some diagrams of how your codebase would grow overtime with and without Tailwind.
+
+Here is what it looks like with traditional CSS:
+
+![Almost linear chart without Tailwind](/images/articles/how-i-did-not-get-and-then-loved-tailwind/without-tailwind.webp)
+
+You are adding more and more classes, meanwhile trying to effectively reuse already created. So it looks almost like a linear dependency, but it all depends on how well organized your CSS is.
+
+And here is what it looks like when Tailwind comes in place:
+
+![Almost linear chart without Tailwind](/images/articles/how-i-did-not-get-and-then-loved-tailwind/with-tailwind.webp)
+
+The more code you write the more you start noticing that most of the time you use the same CSS classes, which means you're effectively reusing them without even worrying about that. It is well described in their [docs](https://tailwindcss.com/docs/optimizing-for-production).
+
+### Developer independency
+
+Developers do not need to wait for each other to introduce certain features, so some CSS code can be reused, because any CSS classes are added only once.
+
+### Fits any architecture
+
+No matter what kind of an application/website you have, Tailwind will most likely work in your case. It can work better or worse, but it will work.
+
+Tailwind works especially great with previously mentioned component architecture, since you can copy/paste entire components or parts of them and they will work right away without the necessity of adjusting related CSS modules or something similar.
+
+### Extensibility
+
+Very often you can find yourself in a situation where you need to introduce a component that solves common problems. Sounds like a good idea to use some library that has already solved that. However, this can drastically increase your bundle size. With Tailwind, you can add any libraries based on it or just copy/paste code from your other projects without worrying about increasing the bundle size.
+
+### Freedom
+
+The point that I value the most. Tailwind does not force you to use certain components with their tricky APIs. It is a real problem when you need to override some styles you don't have access to or even change an HTML tag that lives behind some React component provided by your UI library.
+
+In fact, Tailwind feels like an extension to CSS rather than an opinionated framework that dictates you how to build things. **You should own your code, not your framework.**
+
+## API for your design system
+
+Not only is Tailwind a CSS framework, but an API for your design system. The Tailwind team has done an excellent job of providing you with harmonious colors, spacings, typography, etc. I like how Theo explained it in his [video](https://www.youtube.com/watch?v=ZuLn42merAg&ab_channel=Theo-t3%E2%80%A4gg).
+
+The interesting thing here is that you don't actually add the entire design system to your code, unlike something like Bootstrap. But you do have access to all its features during development.
+
+It is also super easy to customize and extend using a single config file. You can even build your own utility classes using their API. And remember, nobody stops you from adding traditional CSS on top of Tailwind, but be aware that you're loosing efficiency.
+
+## Tradeoffs
+
+I can't find any cons of the framework that would stop me from using it. The only possible problem might be the **time to learn**.
+As with any other technology, you need to spend some time learning it. It takes a couple of hours to learn some of the basics, but understanding how to create real things with Tailwind will take longer: depending on your experience, this can take up to several weeks, but it's worth.
+
+## Conclusion
+
+If you want to:
+- have control over your code
+- never ship unused CSS
+- have meaningful design system
+- increase productivity
+- stop worrying about organizing your CSS
+
+You must give it a chance. Seriously, try it. But don't get scared in the first couple of hours &ndash; it takes time to understand. At some point you'll notice how quick and smooth you write your code. I hope that makes sense. Good luck!
+
+## Resources
+
+- [CSS frameworks - satisfaction, interest, usage, and awareness ratio rankings](https://2021.stateofcss.com/en-US/technologies/css-frameworks/)
+- [Tailwind is a design system](https://www.youtube.com/watch?v=ZuLn42merAg&ab_channel=Theo-t3%E2%80%A4gg)
