@@ -21,7 +21,7 @@ const { frontmatter } = Astro.props;
   <Header />
   <main id="main">
     <header
-      class="bg-decorative py-12 mb-6 lg:mb-12 border-t border-b border-primary"
+      class="bg-decorative pt-12 pb-6 mb-6 lg:mb-12 border-t border-b border-primary"
     >
       <div class="prose md:prose-xl mx-auto px-3">
         <h1
@@ -30,7 +30,7 @@ const { frontmatter } = Astro.props;
           {frontmatter.title}
         </h1>
 
-        <div class="flex -mb-12 mt-4 justify-start items-center text-secondary">
+        <div class="flex mt-4 justify-start items-center text-secondary">
           <p class="!m-0">
             <time datetime={frontmatter.createdAt}
               >{formatDate(frontmatter.createdAt)}</time
