@@ -18,8 +18,8 @@
     "prettier": "prettier -w ."
   },
   "dependencies": {
-    "@astrojs/image": "^0.11.6",
-    "@astrojs/mdx": "^0.12.1",
+    "@astrojs/image": "^0.17.3",
+    "@astrojs/mdx": "^0.19.7",
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^4.0.0",
     "astro": "^2.10.7",
