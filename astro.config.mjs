@@ -21,11 +21,11 @@ export default defineConfig({
     }),
     sitemap(),
     compress({
-      img: false,
-      css: false,
-      html: true,
-      js: true,
-      svg: true,
+      Image: false,
+      CSS: false,
+      HTML: true,
+      JavaScript: true,
+      SVG: true,
     }),
     mdx({
       remarkPlugins: [remarkReadingTime, remarkToc],
