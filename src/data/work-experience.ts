@@ -2,10 +2,25 @@ import type { WorkExpItem } from '../models/work-exp-item';
 
 export const WORK_EXPERIENCE: WorkExpItem[] = [
   {
+    company: 'Pure Storage',
+    location: 'Prague, Czechia',
+    dateStart: 'Apr 2023',
+    dateEnd: 'Now',
+    title: 'Senior Software Engineer',
+    projects: [
+      {
+        description: 'Maintaining multiple frontend applications (including microfrontend),'
+          + ' designing and integrating new features into a big microservice ecosystem,'
+          + ' making sure nothing explodes :)',
+        technologies: ['Angular', 'single-spa', 'K8S', 'Gradle', 'Java'],
+      },
+    ],
+  },
+  {
     company: 'EPAM Systems',
     location: 'Prague, Czechia',
     dateStart: 'Sep 2019',
-    dateEnd: 'Now',
+    dateEnd: 'Jan 2023',
     title: 'Software Engineer -> Lead Software Engineer',
     projects: [
       {
